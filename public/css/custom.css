@@ -1,0 +1,221 @@
+body {
+    font-family: Akkurat
+}
+
+html {
+    font-size: 14px
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.pointer div {
+    transition: .5s ease;
+    opacity: 1;
+}
+
+.page-link {
+    color: #009932;
+}
+
+.page-link:hover {
+    color: #009932;
+}
+
+.page-item.active .page-link {
+    background-color: #009932;
+    border-color: #009932;
+}
+
+.pointer:hover div {
+    transition: .5s ease;
+    opacity: 0.9;
+}
+
+.doc a:link {
+    color: #212529;
+    background-color: transparent;
+    text-decoration: none
+}
+
+.marge {
+    margin-bottom: 0 !important
+}
+
+.doc a:visited {
+    color: #009932;
+    background-color: transparent;
+    text-decoration: none
+}
+
+.doc a:hover {
+    color: #009932;
+    background-color: transparent;
+    text-decoration: underline
+}
+
+.menu:hover {
+    color: #009932;
+    background-color: transparent;
+    text-decoration: underline
+}
+
+.doc a:active {
+    color: #212529;
+    background-color: transparent;
+    text-decoration: underline
+}
+
+.container {
+    max-width: 960px
+}
+
+.btn-success {
+    background-color: #009932
+}
+
+.text-success {
+    color: #009932;
+}
+
+.btnProfile {
+    background-color: white;
+    color: #009932
+}
+
+.btnProfile:hover {
+    background-color: #009932
+}
+
+.pricing-header {
+    max-width: 700px
+}
+
+.card-deck .card {
+    min-width: 220px
+}
+
+.usefulLink {
+    margin: 100px 50px 100px 50px;
+    background-color: #fff;
+    border: 1px solid #696;
+    -webkit-box-shadow: #666 0 1px 2px;
+    -moz-box-shadow: #666 0 1px 2px;
+    box-shadow: #666 0 1px 2px
+}
+
+.event {
+    width: 80%;
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    -webkit-box-shadow: #666 0 2px 3px;
+    -moz-box-shadow: #666 0 2px 3px;
+    box-shadow: #666 0 2px 3px
+}
+
+.footerCustom {
+    margin-bottom: 0 !important;
+    padding-bottom: 48px;
+    background-color: #fff
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.btn-nextEvents:hover {
+    background-color: #009932;
+    color: #fff
+}
+
+.popover-body {
+    padding: 0
+}
+
+.card {
+    max-width: 600px;
+    margin-top: auto;
+    margin-bottom: auto;
+    min-width: 300px;
+    background-color: rgba(0, 0, 0, .5)
+}
+
+.card-header h3 {
+    color: #fff
+}
+
+.input-group-prepend span {
+    min-width: 40px;
+    background-color: #009932;
+    color: #000;
+    border: 0 !important
+}
+
+.docToDownload {
+    background-color: #fff;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+input:focus {
+    outline: 0 !important;
+    box-shadow: 0 0 !important
+}
+
+.remember {
+    color: #fff
+}
+
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px
+}
+
+.login_btn {
+    color: #000;
+    background-color: #009932
+}
+
+.login_btn:hover {
+    color: #000;
+    background-color: #19df5b
+}
+
+.links {
+    color: #fff
+}
+
+.links a {
+    margin-left: 4px
+}
+
+.fc-center h2 {
+    font-size: 40px
+}
+
+@font-face {
+    font-family: Akkurat;
+    font-display: auto;
+    src: local('Akkurat'), url(/fonts/Akkurat.otf)
+}
+
+@media (min-width:768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem
+    }
+
+    html {
+        font-size: 16px
+    }
+}
