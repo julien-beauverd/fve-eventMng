@@ -29,7 +29,7 @@ $(document).ready(function () {
         let inputFile = document.getElementById(idDoc);
         $(inputFile).bind('change', function () {
 
-            if (this.files.length != 0 && this.files[0].size >= '2097152') {
+            if (this.files.length != 0 && this.files[0].size >= '8388608') {
 
                 $('#ModalDocument').modal();
                 $('#submitButton')[0].disabled = true;

@@ -34,7 +34,7 @@ class SendMail extends Mailable
     public function build()
     {
         if ($this->mailType == 'specific') {
-            return $this->from('evenement@fve.ch', 'événements!')
+            return $this->from('evenements-fve@map-pre-prod.ch', 'événements!')
                 ->subject($this->subject)
                 ->markdown('vendor.notifications.specific')
                 ->with([
@@ -44,7 +44,7 @@ class SendMail extends Mailable
                     'eventName' => $this->eventName
                 ]);
         } else {
-            return $this->from('evenement@fve.ch', 'événements!')
+            return $this->from('evenements-fve@map-pre-prod.ch', 'événements!')
                 ->subject($this->subject)
                 ->markdown('vendor.notifications.allmembers')
                 ->with([

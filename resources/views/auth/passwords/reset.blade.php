@@ -5,6 +5,7 @@
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     @include('layout.head')
     <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/register.js') }}"></script>
 </head>
 
 <body id="page-top" class="sidebar-toggled">
