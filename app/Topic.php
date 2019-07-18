@@ -32,9 +32,9 @@ class Topic extends Model
     public static $rules = [
         'event_id' => 'exists:events,id|nullable',
         'time' => 'required|date_format:"H:i:s"',
-        'title' => 'required|string',
-        'speaker' => 'nullable|string',
-        'description' => 'nullable|string'
+        'title' => 'required|string|regex:/^((?!script).)*$/i',
+        'speaker' => 'nullable|string|regex:/^((?!script).)*$/i',
+        'description' => 'nullable|string|regex:/^((?!script).)*$/i'
     ];
 
     public static function getValidation(Array $inputs)

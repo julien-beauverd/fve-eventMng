@@ -45,10 +45,10 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
 
     // Définition des règles de validation
     public static $rules = [
-        'email' => 'required|email',
-        'name' => 'required|alpha',
-        'first_name' => 'required|alpha',
-        'company_name' => 'required|string',
+        'email' => "required|email|regex:/^((?!script).)*$/i",
+        'name' => "required|string|regex:/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/i|regex:/^((?!script).)*$/i",
+        'first_name' => "required|string|regex:/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/i|regex:/^((?!script).)*$/i",
+        'company_name' => 'required|string|regex:/^((?!script).)*$/i',
         'is_admin' => 'nullable|boolean',
         'password' => 'nullable|string'
     ];

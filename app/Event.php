@@ -34,9 +34,9 @@ class Event extends Model
     public static $rules = [
         'location_id' => 'exists:locations,id|nullable',
         'type' => 'required|in:"grand-rdv","rdv-juridique","rdv-formation","rencontres-entrepreneurs"',
-        'name' => 'required|string',
-        'description' => 'required|string',
-        'image' => 'nullable|string',
+        'name' => 'required|string|regex:/^((?!script).)*$/i',
+        'description' => 'required|string|regex:/^((?!script).)*$/i',
+        'image' => 'nullable|string|regex:/^((?!script).)*$/i',
         'date' => 'required|date|after:today',
     ];
 

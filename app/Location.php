@@ -30,11 +30,11 @@ class Location extends Model
 
     // Définition des règles de validation
     public static $rules = [
-        'city' => 'required|string',
-        'street' => 'required|string',
-        'street_number' => 'nullable|string',
+        'city' => 'required|string|regex:/^((?!script).)*$/i',
+        'street' => 'required|string|regex:/^((?!script).)*$/i',
+        'street_number' => 'nullable|string|regex:/^((?!script).)*$/i',
         'zip_code' => 'required|numeric|digits:4',
-        'building' => 'nullable|string'
+        'building' => 'nullable|string|regex:/^((?!script).)*$/i'
     ];
 
     public static function getValidation(array $inputs, bool $updated = true)

@@ -27,10 +27,10 @@ class Document extends Model
 
     // Définition des règles de validation
     public static $rules = [
-        'name' => 'required|string',
+        'name' => "required|string|regex:/^((?!script).)*$/i",
         'doc_to_download' => 'nullable|boolean',
-        'title' => 'nullable|string',
-        'description' => 'nullable|string'
+        'title' => 'nullable|string|regex:/^((?!script).)*$/i',
+        'description' => 'nullable|string|regex:/^((?!script).)*$/i'
         
     ];
 
