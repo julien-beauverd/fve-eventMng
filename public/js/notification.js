@@ -15,3 +15,14 @@ $(document).ready(function () {
         document.getElementById('titleSelect').style.display = 'flex';
     });
 });
+
+window.onload = function () {
+    detectIfmailOK();
+};
+
+function detectIfmailOK() {
+    var topicCount = document.getElementById('mailOK');
+    if (topicCount.innerHTML.indexOf("OK") !== -1) {
+        $("#ModalMail").modal();
+    }
+}

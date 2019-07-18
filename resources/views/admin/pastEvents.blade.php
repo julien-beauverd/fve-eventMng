@@ -21,20 +21,7 @@
         @include('admin.layout.nav')
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
-                    <div class="col-1">
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </div>
-                    <div class="col-11">
-                        <a
-                            class="sidebar-brand d-flex align-items-center justify-content-center p-0 d-lg-none rounded-circle mr-3">
-                            <div><img src="{{URL::asset('/img/logo.png')}}" width="200em" class="float-right"></div>
-                        </a>
-                    </div>
-                </nav>
+                @include('admin.layout.nav-responsive')
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">

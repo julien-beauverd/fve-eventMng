@@ -21,20 +21,7 @@
         @include('admin.layout.nav')
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
-                    <div class="col-1">
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </div>
-                    <div class="col-11">
-                        <a
-                            class="sidebar-brand d-flex align-items-center justify-content-center p-0 d-lg-none rounded-circle mr-3">
-                            <div><img src="{{URL::asset('/img/logo.png')}}" width="200em" class="float-right"></div>
-                        </a>
-                    </div>
-                </nav>
+                @include('admin.layout.nav-responsive')
 
                 <div class="modal fade" id="ModalImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -161,7 +148,8 @@
                                 </span>
                                 @enderror
                             </div>
-                            <p id="pastEvent" class="text-danger" style="display:none;">L'événement ne peut pas se dérouler dans le passé.</p>
+                            <p id="pastEvent" class="text-danger" style="display:none;">L'événement ne peut pas se
+                                dérouler dans le passé.</p>
                             <h6>Lieu de l'événement</h6>
                             <div class="row">
                                 <div class="col-md-7">
@@ -1325,7 +1313,8 @@
                             </div>
                         </div>
                     </div>
-                    <p id="errorTime" class="text-danger" style="display:none;">Le programme doit être trié dans l'ordre chronologique.</p>
+                    <p id="errorTime" class="text-danger" style="display:none;">Le programme doit être trié dans l'ordre
+                        chronologique.</p>
                     <div class="row">
                         <div class="text-center col-md-6">
                             <button id="addTopic" type="button" class="btn btn-outline-success">

@@ -9,24 +9,33 @@
 </head>
 
 <body id="page-top" class="sidebar-toggled">
+    <!-- Modal -->
+    <div class="modal fade" id="ModalMail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Confirmation
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Le message a bien été envoyé.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="wrapper">
         @include('admin.layout.nav')
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
-                    <div class="col-1">
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </div>
-                    <div class="col-11">
-                        <a
-                            class="sidebar-brand d-flex align-items-center justify-content-center p-0 d-lg-none rounded-circle mr-3">
-                            <div><img src="{{URL::asset('/img/logo.png')}}" width="200em" class="float-right"></div>
-                        </a>
-                    </div>
-                </nav>
+                @include('admin.layout.nav-responsive')
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
@@ -81,22 +90,21 @@
                                             </div>
                                             <h4>Contenu</h4>
                                             <div class="input-group form-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i
-                                                                class="fas fa-font text-white"></i></span>
-                                                    </div>
-                                                    <input id="title" type="text" class="form-control" name="title"
-                                                        placeholder="titre (facultatif)" autocomplete="subject"
-                                                        autofocus>
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i
+                                                            class="fas fa-font text-white"></i></span>
                                                 </div>
+                                                <input id="title" type="text" class="form-control" name="title"
+                                                    placeholder="titre (facultatif)" autocomplete="subject" autofocus>
+                                            </div>
                                             <div class="input-group form-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
                                                             class="fas fa-font text-white"></i></span>
                                                 </div>
                                                 <textarea id="message" class="form-control" name="message"
-                                                    placeholder="message (obligatoire)" required autocomplete="message" autofocus
-                                                    rows="4"></textarea>
+                                                    placeholder="message (obligatoire)" required autocomplete="message"
+                                                    autofocus rows="4"></textarea>
                                             </div>
                                             <div class="row" style="padding-top:40px;">
                                                 <div class="col-md-12">
@@ -115,6 +123,9 @@
                         </div>
                     </div>
                     {{ Form::close() }}
+                    <div id="mailOK" style="display:none;">
+                        @error('OK') {{ $message }}@enderror
+                    </div>
                 </div>
             </div>
             <!-- End of Main Content -->

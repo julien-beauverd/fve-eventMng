@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
   @include('layout.head')
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="{{ asset('js/scripts.js') }}"></script>
@@ -19,19 +19,8 @@
       @include('layout.nav')
 
       <div id="content">
-        <!-- Topbar -->
-        <nav class="d-lg-none navbar navbar-expand navbar-light bg-white topbar static-top shadow">
-          <div class="col-1">
-            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-              <i class="fa fa-bars"></i>
-            </button>
-          </div>
-          <div class="col-11">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center p-0 d-lg-none rounded-circle mr-3">
-              <div><img src="{{URL::asset('/img/logo.png')}}" width="200em" class="float-right"></div>
-            </a>
-          </div>
-        </nav>
+
+        @include('layout.nav-responsive')
         <img class="img-fluid" src="{{URL::asset('/img/banner-about.png')}}" alt="banner" width="100%">
         <div class="container-fluid">
           <div class="row m-5">
@@ -228,7 +217,7 @@
 
       </div>
       <!-- End of Main Content -->
-      @include('  layout.footer')
+      @include(' layout.footer')
     </div>
     <!-- End of Content Wrapper -->
   </div>

@@ -51,9 +51,10 @@ class AdminController extends Controller
             $eventName = $request->eventName;
             $subject = $request->subject;
             $message = $request->message;
-            
+
+            $event = Event::where('name', '=', $eventName)->first();
             if ($mailType == 'specific') {
-                $event = Event::where('name', '=', $eventName)->first();
+
                 $link = url('event/' . $event->id . '');
                 $eventWithUsers = Event::with('users')->where('name', '=', $eventName)->get();
                 Mail::bcc($eventWithUsers[0]->users)->send(new SendMail($eventName, $subject, $message, $link, $mailType, $title));
@@ -62,8 +63,23 @@ class AdminController extends Controller
                 Mail::bcc(User::all())->send(new SendMail($eventName, $subject, $message, $link, $mailType, $title));
             }
 
-            $eventsWithUsers = Event::with('users')->where('date_show_end', '>=', date('Y-m-d'))->orderBy('date', 'asc')->get();
-            return view('admin/sendMail')->with(['eventsWithUsers' => $eventsWithUsers, 'OK' => 'OK']);
+            $testEvent['type'] = $event->type;
+            $testEvent['name'] = $event->name;
+            $testEvent['date'] = $event->date;
+            $testEvent['description'] = $event->description;
+            $validator = Event::getValidation($testEvent, false);
+            if (!$validator->fails()) {
+                $validator->getMessageBag()->add('OK', "OK");
+                $messages = $validator->messages();
+                $eventsWithUsers = Event::with('users')->where('date_show_end', '>=', date('Y-m-d'))->orderBy('date', 'asc')->get();
+                return view('admin/sendMail')->with(['eventsWithUsers' => $eventsWithUsers])->withErrors($messages);
+            } else {
+
+                $validator->getMessageBag()->add('OK', "NOK");
+                $messages = $validator->messages();
+                $eventsWithUsers = Event::with('users')->where('date_show_end', '>=', date('Y-m-d'))->orderBy('date', 'asc')->get();
+                return view('admin/sendMail')->with(['eventsWithUsers' => $eventsWithUsers])->withErrors($messages);
+            }
         }
     }
 
@@ -494,7 +510,6 @@ class AdminController extends Controller
                             'document' => 'nullable|max:8388608'
                         );
                         $validator = Validator::make($fileArray, $rules);
-                        dd($fileArray);
                         if ($validator->fails()) {
                             $messages = $validator->messages();
                             DB::rollback();

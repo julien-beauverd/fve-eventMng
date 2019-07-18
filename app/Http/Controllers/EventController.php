@@ -41,7 +41,7 @@ class EventController extends Controller
         if ($data->count()) {
             foreach ($data as $key => $event) {
                 $start = new \DateTime($event->date . " " . $event->topics[0]->time);
-                $end = new \DateTime($event->date . " " . $event->topics[1]->time);
+                $end = new \DateTime($event->date . " " . $event->topics[count($event->topics) - 1]->time);
                 switch ($event->type) {
                     case 'grand-rdv':
                         $color = '#962404';

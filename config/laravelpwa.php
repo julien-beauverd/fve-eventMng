@@ -4,7 +4,7 @@ return [
     'name' => 'événements!',
     'manifest' => [
         'name' => env('APP_NAME', 'événements!'),
-        'short_name' => 'é!',
+        'short_name' => 'événements!',
         'start_url' => '/',
         'background_color' => '#ffffff',
         'theme_color' => '#000000',

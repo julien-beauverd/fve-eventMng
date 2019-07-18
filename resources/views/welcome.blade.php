@@ -8,7 +8,7 @@
 <body>
     <div class="container-fluid">
         <header>
-            <div class="row">
+            <div class="row pb-5">
                 <div class="col-3">
                     <img class="img-fluid float-right" src="{{URL::asset('/img/exclamation-gauche.png')}}" width="120px"
                         alt="point d'exclamation, logo de la fve">
