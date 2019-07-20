@@ -46,8 +46,8 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
     // Définition des règles de validation
     public static $rules = [
         'email' => "required|email|regex:/^((?!script).)*$/i",
-        'name' => "required|string|regex:/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/i|regex:/^((?!script).)*$/i",
-        'first_name' => "required|string|regex:/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/i|regex:/^((?!script).)*$/i",
+        'name' => "required|string|regex:/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/i|regex:/^((?!script).)*$/i",
+        'first_name' => "required|string|regex:/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/i|regex:/^((?!script).)*$/i",
         'company_name' => 'required|string|regex:/^((?!script).)*$/i',
         'is_admin' => 'nullable|boolean',
         'password' => 'nullable|string'
@@ -68,7 +68,6 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
                     ->where('first_name', $inputs['first_name'])
                     ->where('email', $inputs['email'])
                     ->first();
-
                 if (!empty($exist)) {
                     $validator->getMessageBag()->add('email', 'un autre compte a déjà les mêmes données');
                 }

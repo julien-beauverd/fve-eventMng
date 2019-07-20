@@ -54,7 +54,7 @@ $(document).ready(function () {
 
     $(document).on('click', '#addTopic', function (e) {
         var select = document.getElementById('parent');
-        if (select.querySelector('#topicCount').value < 34) {
+        if (select.querySelector('#topicCount').value < 35) {
             select.childNodes[select.querySelector('#topicCount').value].childNodes[1].childNodes[1].childNodes[3].required = true;
             select.childNodes[select.querySelector('#topicCount').value].childNodes[3].childNodes[1].childNodes[3].required = true;
             select.childNodes[select.querySelector('#topicCount').value].style.display = '';
@@ -67,14 +67,15 @@ $(document).ready(function () {
             newTopic.style.cssText = '';
             newTopic.id = "";
             select.querySelector('#topicNumber').value++;
-            newTopic.querySelector("#time-topic").name = "time_topic_" + select.querySelector('#topicNumber').value;
-            newTopic.querySelector("#time-topic").id = "time_topic_" + select.querySelector('#topicNumber').value;
-            newTopic.querySelector("#title-topic").name = "title_topic_" + select.querySelector('#topicNumber').value;
-            newTopic.querySelector("#title-topic").id = "title_topic_" + select.querySelector('#topicNumber').value;
-            newTopic.querySelector("#speaker-topic").name = "speaker_topic_" + select.querySelector('#topicNumber').value;
-            newTopic.querySelector("#speaker-topic").id = "speaker_topic_" + select.querySelector('#topicNumber').value;
-            newTopic.querySelector("#description-topic").name = "description_topic_" + select.querySelector('#topicNumber').value;
-            newTopic.querySelector("#description-topic").id = "description_topic_" + select.querySelector('#topicNumber').value;
+            newTopic.querySelector("#time_topic").name = "time_topic_" + (select.querySelector('#topicNumber').value + 1);
+            newTopic.querySelector("#time_topic").id = "time_topic_" + select.querySelector('#topicNumber').value;
+            newTopic.querySelector("#title_topic").name = "title_topic_" + select.querySelector('#topicNumber').value;
+            newTopic.querySelector("#title_topic").id = "title_topic_" + select.querySelector('#topicNumber').value;
+            newTopic.querySelector("#speaker_topic").name = "speaker_topic_" + select.querySelector('#topicNumber').value;
+            newTopic.querySelector("#speaker_topic").id = "speaker_topic_" + select.querySelector('#topicNumber').value;
+            newTopic.querySelector("#description_topic").name = "description_topic_" + select.querySelector('#topicNumber').value;
+            newTopic.querySelector("#description_topic").id = "description_topic_" + select.querySelector('#topicNumber').value;
+            
             select.appendChild(newTopic);
             select.querySelector('#topicCount').value++;
             select.querySelector('#topicCount').value++;

@@ -28,13 +28,13 @@
                 <div id="parent" class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="text-center">Les prochains événements</h1>
+                            <h1 class="text-center pt-5">Les prochains événements</h1>
                         </div>
                     </div>
                     @foreach($events as $event)
                     <div class="row" style="padding-top:30px;">
                         <div class="col-md-12 mb-2">
-                            <div class="card border-left-success shadow h-100 py-2 mx-auto"
+                            <div class="card border-left-success h-100 py-2 mx-auto"
                                 style="background-color:white;max-width:900px;">
                                 <div class="card-body p-0 pl-2 pr-2">
                                     <div class="row">
@@ -76,7 +76,7 @@
                                             </a>
                                             <a href='{{ url('/admin/modifyEvent/'.$event->id.'') }}'
                                                 class='list-group-item list-group-item-action btn-nextEvents p-2'>
-                                                modifier cet événement
+                                                Modifier cet événement
                                             </a>
                                         </div>
                                         <div class="col-md-1 pb-0 text-right" data-container="body"

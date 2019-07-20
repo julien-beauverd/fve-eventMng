@@ -28,46 +28,73 @@
 
     @media (max-width: 992px) {
 
-      .col-lg-7,
-      .col-lg-4,
-      .col-lg-1,
-      .col-lg-12 {
-        padding: 0;
+      .col-lg-6 {
+        padding: 30px;
       }
 
       .pointer h4 {
-        font-size: 1.2rem;
+        font-size: 2rem;
         text-align: center;
       }
 
       .pointer h5 {
-        font-size: 1rem;
+        font-size: 1.5rem;
         text-align: center;
       }
     }
 
     @media (max-width: 767px) {
 
-      .pointer {
-        padding: 5px 5px 5px 5px !important
-      }
-
       .pointer h4 {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
       }
 
       .pointer h5 {
-        font-size: 1rem;
+        font-size: 1.3rem;
+      }
+
+      footer {
+        padding-top: 200px !important;
+        position: relative;
+        bottom: 0;
       }
     }
 
     @media (max-width: 576px) {
 
-
       h5,
       .col-sm-8 {
         text-align: center;
       }
+
+      .pointer h4 {
+        font-size: 1.6rem;
+
+      }
+
+      .pointer h5 {
+        font-size: 1.2rem;
+
+      }
+    }
+
+    @media (max-width:428px) {
+      a.text-dark {
+        padding-right: 5px !important;
+      }
+
+      .pointer h4 {
+        font-size: 1.3rem;
+
+      }
+
+      .pointer h5 {
+        font-size: 1rem;
+
+      }
+    }
+
+    @media (max-width: 365px) {
 
       .pointer h4 {
         font-size: 1.1rem;
@@ -81,7 +108,7 @@
 
     }
 
-    @media (max-width: 442px) {
+    @media (max-width: 301px) {
 
       .pointer h4 {
         font-size: 0.9rem;
@@ -90,20 +117,6 @@
 
       .pointer h5 {
         font-size: 0.7rem;
-
-      }
-
-    }
-
-    @media (max-width: 365px) {
-
-      .pointer h4 {
-        font-size: 0.75rem;
-
-      }
-
-      .pointer h5 {
-        font-size: 0.6rem;
 
       }
 
@@ -129,19 +142,20 @@
               <h5>Vous n'avez pas accès à la liste des autres personnes.</h5>
               @else
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 pt-5">
                   <h2 class="text-center">Liste de mes événements</h2>
                 </div>
               </div>
-              <h5 class="text-center">Vous n'êtes inscrit à aucun événement pour le moment.</h5>
-              <p class="text-center">Rendez vous sur la page <a href='{{ url('/eventList/asc') }}'>Agenda</a> afin de
+              <h5 class="text-center pt-5">Vous n'êtes inscrit à aucun événement pour le moment.</h5>
+              <p class="text-center pt-3">Rendez vous sur la page <a href='{{ url('/eventList/asc') }}'>Agenda</a> afin
+                de
                 vous
                 s'inscrire à un
                 événement.</p>
               @endif
               @else
               <div class="row">
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 text-center pt-3">
                   <h2>Liste de mes événements</h2>
                 </div>
               </div>
@@ -157,7 +171,7 @@
                 @else
                 <?php $backgroundColor = '#E49D0A'?>
                 @endif
-                <div class="pointer col-md-6 pt-5"
+                <div class="pointer col-lg-6 pt-5"
                   onclick="window.location.href = '{{ url('/event/'.$event->id.'') }}';">
                   <div class="row">
                     <div class="col-md-12">
@@ -202,7 +216,7 @@
                 @else
                 <?php $backgroundColor = '#E49D0A'?>
                 @endif
-                <div class="pointer col-md-6 pt-5"
+                <div class="pointer col-lg-6 pt-5"
                   onclick="window.location.href = '{{ url('/event/'.$event->id.'') }}';">
                   <div class="row">
                     <div class="col-md-12">
@@ -244,9 +258,11 @@
             </div>
           </div>
         </div>
+        <!-- End of Main Content -->
 
       </div>
-      <!-- End of Main Content -->
+
+
       @include(' layout.footer')
     </div>
     <!-- End of Content Wrapper -->

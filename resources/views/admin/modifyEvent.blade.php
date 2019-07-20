@@ -109,7 +109,8 @@
                         <div class="col-md-6">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                    <span class="input-group-text"><i
+                                            class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                 </div>
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
                                     name="name" placeholder="nom de l'événement" required autocomplete="name" autofocus
@@ -123,7 +124,8 @@
                             </div>
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                    <span class="input-group-text"><i
+                                            class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                 </div>
                                 <textarea id="description"
                                     class="form-control @error('description') is-invalid @enderror" name="description"
@@ -141,7 +143,7 @@
                             <h6 class="font-weight-bold">Date de l'événement</h6>
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-calendar-alt text-white"></i></span>
+                                    <span class="input-group-text"><i class="fas fa-calendar-alt text-info"></i></span>
                                 </div>
                                 <input id="date" type="date" class="form-control @error('date') is-invalid @enderror"
                                     name="date" placeholder="date de l'événement" required autocomplete="date" autofocus
@@ -161,7 +163,8 @@
                                 <div class="col-md-8">
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                            <span class="input-group-text"><i
+                                                    class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                         </div>
                                         <input id="city" type="text"
                                             class="form-control @error('city') is-invalid @enderror" name="city"
@@ -178,7 +181,8 @@
                                 <div class="col-md-4">
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                            <span class="input-group-text"><i
+                                                    class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                         </div>
                                         <input id="zip_code" type="text"
                                             class="form-control @error('zip_code') is-invalid @enderror" name="zip_code"
@@ -197,7 +201,8 @@
                                 <div class="col-md-9">
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                            <span class="input-group-text"><i
+                                                    class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                         </div>
                                         <input id="street" type="text"
                                             class="form-control @error('street') is-invalid @enderror" name="street"
@@ -214,7 +219,8 @@
                                 <div class="col-md-3">
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                            <span class="input-group-text"><i
+                                                    class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                         </div>
                                         <input id="street_number" type="text"
                                             class="form-control @error('street_number') is-invalid @enderror"
@@ -232,7 +238,7 @@
                             </div>
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-building text-white"></i></span>
+                                    <span class="input-group-text"><i class="fas fa-building text-info"></i></span>
                                 </div>
                                 <input id="building" type="text"
                                     class="form-control @error('buidling') is-invalid @enderror" name="building"
@@ -247,9 +253,10 @@
                             </div>
                         </div>
                     </div>
+                    <hr>
                     <div class="row" style="padding-top:40px;">
                         <div class="col-md-12">
-                            <h6 class="text-center font-weight-bold">Programme de l'événement</h6>
+                            <h5 class="text-left font-weight-bold">Programme de l'événement</h5>
                         </div>
                     </div>
                     <div id="parent">
@@ -261,7 +268,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_1" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -278,7 +285,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_1" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -295,7 +303,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_1" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -313,7 +321,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_1" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -333,7 +342,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_2" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -350,7 +359,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_2" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -367,7 +377,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_2" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -385,7 +395,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_2" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -405,7 +416,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_3" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -422,7 +433,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_3" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -439,7 +451,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_3" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -457,7 +469,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_3" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -477,7 +490,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_4" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -494,7 +507,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_4" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -511,7 +525,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_4" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -529,7 +543,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_4" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -549,7 +564,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_5" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -566,7 +581,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_5" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -583,7 +599,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_5" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -601,7 +617,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_5" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -621,7 +638,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_6" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -638,7 +655,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_6" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -655,7 +673,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_6" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -673,7 +691,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_6" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -693,7 +712,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_7" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -710,7 +729,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_7" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -727,7 +747,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_7" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -745,7 +765,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_7" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -765,7 +786,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_8" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -782,7 +803,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_8" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -799,7 +821,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_8" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -817,7 +839,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_8" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -837,7 +860,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_9" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -854,7 +877,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_9" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -871,7 +895,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_9" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -889,7 +913,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_9" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -909,7 +934,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_10" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -926,7 +951,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_10" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -943,7 +969,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_10" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -961,7 +987,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_10" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -981,7 +1008,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_11" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -998,7 +1025,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_11" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -1015,7 +1043,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_11" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -1033,7 +1061,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_11" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -1053,7 +1082,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_12" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -1070,7 +1099,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_12" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -1087,7 +1117,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_12" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -1105,7 +1135,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_12" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -1125,7 +1156,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_13" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -1142,7 +1173,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_13" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -1159,7 +1191,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_13" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -1177,7 +1209,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_13" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -1197,7 +1230,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_14" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -1214,7 +1247,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_14" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -1231,7 +1265,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_14" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -1249,7 +1283,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_14" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -1269,7 +1304,7 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                     </div>
                                     <input id="time_topic_15" type="time"
                                         class="form-control @error('time_topic') is-invalid @enderror"
@@ -1286,7 +1321,8 @@
                             <div class="col-md-2">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="title_topic_15" type="text"
                                         class="form-control @error('title_topic') is-invalid @enderror"
@@ -1303,7 +1339,7 @@
                             <div class="col-md-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                     </div>
                                     <input id="speaker_topic_15" type="text"
                                         class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -1321,7 +1357,8 @@
                             <div class="col-md-5">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                        <span class="input-group-text"><i
+                                                class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                     </div>
                                     <input id="description_topic_15" type="text"
                                         class="form-control @error('description_topic') is-invalid @enderror"
@@ -1340,17 +1377,21 @@
                     <p id="errorTime" class="text-danger" style="display:none;">Le programme doit être trié dans l'ordre
                         chronologique.</p>
                     <div class="row">
-                        <div class="text-center col-md-6">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-2">
                             <button id="addTopic" type="button" class="btn btn-outline-success">
                                 rajouter une ligne
                             </button>
                         </div>
-                        <div class="text-center col-md-6">
+                        <div class="col-md-3">
                             <button id="removeTopic" type="button" class="btn btn-outline-secondary">
                                 supprimer la dernière ligne
                             </button>
                         </div>
                     </div>
+                    <hr>
                     <div class="row" style="padding-top:40px;">
                         <div class="col-md-4">
                             <div class="row">
@@ -1362,8 +1403,7 @@
                                 <div class="col-md-12">
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i
-                                                    class="fas fa-image text-white"></i></span>
+                                            <span class="input-group-text"><i class="fas fa-image text-info"></i></span>
                                         </div>
                                         <select id="typeEvent" name="typeEvent" class="form-control">
                                             <option value="grand-rdv"
@@ -1388,65 +1428,85 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="col-md-12">
-                                <h6 class="font-weight-bold">Bannière de l'événement</h6>
-                            </div>
-                            <div class="col-md-12">
-                                <img id="currentImg" class="img-fluid pr-2 ml-1"
-                                    src="{{URL::asset('/img/events/'.$event->image.'')}}" alt="img event">
-                                <button id="addBanner" type="button" class="btn btn-outline-danger mt-2">
-                                    supprimer la banière actuelle
-                                </button>
-                            </div>
-                            <div id="inputImg" class="input-group form-group" style="display:none;">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-image text-white"></i></span>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h6 class="font-weight-bold">Bannière de l'événement</h6>
                                 </div>
-                                <input id="image" type="file" class=" @error('image_upload') is-invalid @enderror"
-                                    name="image" placeholder="bannière de l'événement" accept="image/*"
-                                    autocomplete="image" autofocus value="{{old('image')}}">
-                                @error('image_upload')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
                             </div>
-                            <div id="dimensionImg" class="col-md-12" style="display:none;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <img id="currentImg" class="img-fluid pr-2 ml-1"
+                                        src="{{URL::asset('/img/events/'.$event->image.'')}}" alt="img event">
+                                    <button id="addBanner" type="button" class="btn btn-outline-danger mt-2">
+                                        supprimer la banière actuelle
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="inputImg" class="input-group form-group" style="display:none;">
 
-                                <p>Dimension recommandée : 1150 x 420</p>
-                                <p><i class="fas fa-exclamation-circle"></i> Taille max de l'image : 2MB</p>
+                                        <input id="image" type="file"
+                                            class=" @error('image_upload') is-invalid @enderror" name="image"
+                                            placeholder="bannière de l'événement" accept="image/*" autocomplete="image"
+                                            autofocus value="{{old('image')}}">
+                                        @error('image_upload')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="dimensionImg" class="col-md-12" style="display:none;">
 
+                                        <p>Dimension recommandée : 1150 x 420</p>
+                                        <p><i class="fas fa-exclamation-circle"></i> Taille max de l'image : 2MB</p>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="col-md-12">
-                                <h6 class="font-weight-bold">Documents liés à l'événement</h6>
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h6 class="font-weight-bold">Documents liés à l'événement</h6>
+                                </div>
                             </div>
-                            <div class="col-md-12">
-                                <ul>
-                                    @foreach($event->documents as $document)
-                                    <li class="list-item doc">
-                                        <a id="doc-{{$loop->iteration}}"
-                                            href="{{URL::asset('/docs/events/'.$document->name.'')}}" download>
-                                            {{$document->name}}
-                                        </a>
-                                        <a id="{{$loop->iteration}}"
-                                            class="btn-doc btn btn-danger btn-circle btn-sm p-1"
-                                            style="border-radius:100%;background-color:#e74a3b;">
-                                            <i style="pointer-events: none;
-                                            cursor: default;" class="fas fa-trash text-white"></i>
-                                        </a>
-                                        <input id="delDoc_{{$loop->iteration}}" name="delDoc_{{$loop->iteration}}"
-                                            type="hidden" value="0">
-                                    </li>
-                                    @endforeach
-                                </ul>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul>
+                                        @foreach($event->documents as $document)
+                                        <li class="list-item doc">
+                                            <a id="doc-{{$loop->iteration}}"
+                                                href="{{URL::asset('/docs/events/'.$document->name.'')}}" download>
+                                                {{$document->name}}
+                                            </a>
+                                            <a id="{{$loop->iteration}}"
+                                                class="btn-doc btn btn-danger btn-circle btn-sm p-1"
+                                                style="border-radius:100%;background-color:#e74a3b;">
+                                                <i style="pointer-events: none;
+                                                        cursor: default;" class="fas fa-trash text-white"></i>
+                                            </a>
+                                            <input id="delDoc_{{$loop->iteration}}" name="delDoc_{{$loop->iteration}}"
+                                                type="hidden" value="0">
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
-                            <div id="DocumentParent">
-                                <input id="docCount" name="docCount" type="hidden" value="0">
-                                <div id="dimensionDoc" class="col-md-12">
-                                    <p><i class="fas fa-exclamation-circle"></i> Taille max d'un document : 8MB</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="DocumentParent">
+                                        <input id="docCount" name="docCount" type="hidden" value="0">
+                                        <div id="dimensionDoc" class="col-md-12">
+                                            <p><i class="fas fa-exclamation-circle"></i> Taille max d'un document : 8MB
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -1459,10 +1519,12 @@
                         </div>
                     </div>
                     <div class="row" style="padding-top:40px;">
-                        <div class="col-md-12">
+                        <div class="col-md-7">
+                        </div>
+                        <div class="col-md-5">
                             <div class="form-group">
                                 <button id="submitButton" type="submit"
-                                    class="btn float-right btn-success btn-md pl-5 pr-5 mt-3">
+                                    class="btn float-left btn-success btn-md pl-5 pr-5 mt-3 mb-3">
                                     <h6>Modifier l'événement</h6>
                                 </button>
                             </div>
@@ -1473,7 +1535,7 @@
                         <div class="col-md-2">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-clock text-white"></i></span>
+                                    <span class="input-group-text"><i class="fas fa-clock text-info"></i></span>
                                 </div>
                                 <input id="time_topic" type="time"
                                     class="form-control @error('time_topic') is-invalid @enderror" name="time_topic"
@@ -1490,7 +1552,8 @@
                         <div class="col-md-2">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                    <span class="input-group-text"><i
+                                            class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                 </div>
                                 <input id="title_topic" type="text"
                                     class="form-control @error('title_topic') is-invalid @enderror" name="title_topic"
@@ -1507,7 +1570,7 @@
                         <div class="col-md-3">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-user text-white"></i></span>
+                                    <span class="input-group-text"><i class="fas fa-user text-info"></i></span>
                                 </div>
                                 <input id="speaker_topic" type="text"
                                     class="form-control @error('speaker_topic') is-invalid @enderror"
@@ -1524,7 +1587,8 @@
                         <div class="col-md-5">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                    <span class="input-group-text"><i
+                                            class="fas fa-pencil-alt fa-flip-horizontal text-info"></i></span>
                                 </div>
                                 <input id="description_topic" type="text"
                                     class="form-control @error('description_topic') is-invalid @enderror"
@@ -1539,11 +1603,8 @@
                             </div>
                         </div>
                     </div>
-                    <div id="documentTemplate" class="row" style="display:none">
+                    <div id="documentTemplate" style="display:none">
                         <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-file text-white"></i></span>
-                            </div>
                             <input id="document" type="file" class=" @error('document') is-invalid @enderror"
                                 name="document" placeholder="document de l'événement" autocomplete="image" autofocus
                                 value="{{old('document')}}">

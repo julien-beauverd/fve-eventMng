@@ -498,7 +498,7 @@ class AdminController extends Controller
                     $newImage->getClientOriginalExtension();
                 $storagePath = public_path('img/events/');
 
-                Image::make($newImage->getRealPath())->resize(1150, 420)->save($storagePath . '/' . $filename, 100);
+                Image::make($newImage->getRealPath())->resize(2000, 730)->save($storagePath . '/' . $filename, 100);
 
                 if ($request->document_1 != null) {
                     for ($i = 1; $i <= $request->docCount; $i++) {
@@ -692,7 +692,7 @@ class AdminController extends Controller
                         $newImage->getClientOriginalExtension();
                     $storagePath = public_path('img/events/');
 
-                    Image::make($newImage->getRealPath())->resize(1150, 420)->save($storagePath . '/' . $filename, 100);
+                    Image::make($newImage->getRealPath())->resize(2000, 730)->save($storagePath . '/' . $filename, 100);
 
                     File::delete(public_path() . '/img/events/' . $oldImage);
                 }

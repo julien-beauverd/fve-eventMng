@@ -5,6 +5,41 @@
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
     @include('layout.head')
     <script src="{{ asset('js/scripts.js') }}"></script>
+    <style>
+        @media (max-width: 1100px) {
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+
+            h2,
+            h4 {
+                text-align: center;
+            }
+
+            h5 {
+                text-align: left;
+            }
+
+            .col-3 {
+                text-align: right !important;
+            }
+
+            #informations {
+                order: 0;
+            }
+
+            #description {
+                order: 1;
+            }
+
+            .col-lg-7 {
+                padding-right: 15px !important;
+            }
+        }
+    </style>
 </head>
 
 <body id="page-top" class="sidebar-toggled" style="background-color: lightgray;">
@@ -108,7 +143,7 @@
                     @include('layout.nav-responsive')
                     <div class="container-fluid event">
                         <div class="row" style="padding-bottom: 20px;">
-                            <div class="col-md-12">
+                            <div class="col-sm-12">
                                 <button onclick="window.location.href = '{{ url('/eventList/asc') }}';" type="button"
                                     class="btn btn-outline-success btn-md btnProfile">
                                     retour à la liste
@@ -116,13 +151,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-lg-12">
                                 <img class="img-fluid" src="{{URL::asset('/img/events/'.$event[0]->image.'')}}"
                                     alt="img event">
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 mt-4">
+                            <div class="col-lg-6 mt-4">
                                 @if($participate)
                                 <button type="button" class="btn btn-block btn-success btn-md active"
                                     style="cursor:default;">
@@ -135,27 +170,27 @@
                                 </button>
                                 @endif
                             </div>
-                            <div class="col-md-6 mt-4">
+                            <div class="col-lg-6 mt-4">
                                 <h2>
                                     {{ $event[0]->name}}
                                 </h2>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-8">
-                                <h4>
+                            <div id="description" class="col-lg-6 pt-4">
+                                <h4 class="font-weight-bold">
                                     Description
                                 </h4>
                                 <p class="text-justify" style="white-space:pre-line;">
                                     {{ $event[0]->description}}
                                 </p>
                             </div>
-                            <div class="col-md-4">
+                            <div id="informations" class="col-lg-6 pt-4">
                                 <div class="row mt-3">
-                                    <div class="col-2 text-center">
+                                    <div class="col-3 text-center">
                                         <i class="far fa-calendar text-success fa-2x"></i>
                                     </div>
-                                    <div class="col-10">
+                                    <div class="col-9 pt-2">
                                         <h5>
                                             <?php setlocale (LC_ALL, "fr_FR") ?>
                                             {{strftime("%A %e %B %Y",strtotime($event[0]->date))}}
@@ -163,10 +198,10 @@
                                     </div>
                                 </div>
                                 <div class="row mt-2">
-                                    <div class="col-2 text-center">
+                                    <div class="col-3 text-center">
                                         <i class="fas fa-map-marker-alt text-success fa-2x"></i>
                                     </div>
-                                    <div class="col-10">
+                                    <div class="col-9 pt-2">
                                         <h5>
                                             {{ $event[0]->location->street}}
                                             {{ $event[0]->location->street_number}}
@@ -177,14 +212,14 @@
                                     </div>
                                 </div>
                                 <div class="row mt-2">
-                                    <div class="col-2 text-center">
+                                    <div class="col-3 text-center">
                                         <i class="far fa-clock text-success fa-2x"></i>
                                     </div>
-                                    <div class="col-10">
+                                    <div class="col-9 pt-2">
 
                                         @foreach($event[0]->topics as $topic)
                                         @if($loop->first)
-                                        <h5 style="display:inline;">
+                                        <h5>
                                             {{date("H:i",strtotime($topic->time))}}
                                         </h5>
                                         <?php $eventStart = $topic->time ?>
@@ -197,19 +232,23 @@
                                 </div>
                                 @if($participate == true || $old == true)
                                 <div class="row mt-4">
-                                    <a href="{{URL::asset('/docs/export.blade.php?name='.$event[0]->name.'&date='.$event[0]->date.'&address='.$event[0]->location->street.'&street_number='.$event[0]->location->street_number.'&city='.$event[0]->location->city.'&zip_code='.$event[0]->location->zip_code.'&description='.$event[0]->description.'&start='.$eventStart.'&end='.$eventEnd.'')}}"
-                                        download style="text-decoration: none;">
-                                        <button type="button" class="btn btn-outline-success btn-block btnProfile">
-                                            exporter ce rendez-vous
-                                        </button>
-                                    </a>
+                                    <div class="col-lg-3">
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <a href="{{URL::asset('/docs/export.blade.php?name='.$event[0]->name.'&date='.$event[0]->date.'&address='.$event[0]->location->street.'&street_number='.$event[0]->location->street_number.'&city='.$event[0]->location->city.'&zip_code='.$event[0]->location->zip_code.'&description='.$event[0]->description.'&start='.$eventStart.'&end='.$eventEnd.'')}}"
+                                            download style="text-decoration: none;">
+                                            <button type="button" class="btn btn-outline-success btn-block btnProfile">
+                                                exporter ce rendez-vous
+                                            </button>
+                                        </a>
+                                    </div>
                                 </div>
                                 @endif
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
-                                <h4>
+                            <div class="col-lg-12 pt-5">
+                                <h4 class="font-weight-bold">
                                     Programme
                                 </h4>
                                 <div class="table-responsive">
@@ -221,13 +260,13 @@
                                                 <td>
                                                     {{date("H:i",strtotime($topic->time))}}
                                                 </td>
-                                                <td style="min-width: 20em;">
+                                                <td style="min-width: 15em;">
                                                     {{$topic->title}}
                                                 </td>
-                                                <td>
+                                                <td style="min-width: 10em;">
                                                     {{$topic->speaker}}
                                                 </td>
-                                                <td style="min-width: 30em;">
+                                                <td style="min-width: 20em;">
                                                     {{$topic->description}}
                                                 </td>
                                             </tr>
@@ -255,8 +294,8 @@
                         </div>
                         @if($participate == true || $old == true)
                         <div class="row">
-                            <div class="col-md-4">
-                                <h4>Documents</h4>
+                            <div class="col-lg-4 pt-5">
+                                <h4 class="font-weight-bold">Documents</h4>
                                 <ul>
                                     @foreach($event[0]->documents as $document)
                                     <li class="list-item doc">
@@ -267,8 +306,8 @@
                                     @endforeach
                                 </ul>
                             </div>
-                            <div class="col-md-8">
-                                <h4>Participants</h4>
+                            <div class="col-lg-8 pt-5">
+                                <h4 class="font-weight-bold">Participants</h4>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <thead>

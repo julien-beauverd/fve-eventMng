@@ -9,64 +9,65 @@
 </head>
 
 <body id="page-top" class="sidebar-toggled">
+    <div class="modal fade" id="ModalDocument" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Erreur
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Le fichier est trop lourd. La taille limite est de 8MB.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Modaldocs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Confirmation
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    La liste des documents a bien été modifié.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal"
+                        onclick="window.location.href = '{{ url('/admin/docsToDownloadManagement') }}';">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="wrapper">
         @include('admin.layout.nav')
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
-                    @include('admin.layout.nav-responsive')
+                @include('admin.layout.nav-responsive')
 
-                <div class="modal fade" id="ModalDocument" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">
-                                    Erreur
-                                </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Le fichier est trop lourd. La taille limite est de 8MB.
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Modal -->
-                <div class="modal fade" id="Modaldocs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">
-                                    Confirmation
-                                </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                La liste des documents a bien été modifié.
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-dismiss="modal"
-                                    onclick="window.location.href = '{{ url('/admin/docsToDownloadManagement') }}';">OK</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div id="docsOK" style="display:none;">
                     @error('OK') {{ $message }}@enderror
                 </div>
-                <div class="container-fluid">
+                <div class="container-fluid p-5">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="text-center">Gestion des documents à télécharger</h1>
+                            <h1 class="text-center pb-5">Gestion des documents à télécharger</h1>
                         </div>
                     </div>
                     {{ Form::open(array('url' => '/admin/docsToDownloadManagement', 'method' => 'PUT', 'enctype' => "multipart/form-data")) }}
@@ -99,7 +100,7 @@
                         <div class="col-md-3">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                    <span class="input-group-text"><i class="fas fa-font text-info"></i></span>
                                 </div>
                                 <input id="title_document_{{$loop->iteration}}" type="text"
                                     class="form-control @error('title_document') is-invalid @enderror"
@@ -117,7 +118,7 @@
                         <div class="col-md-5">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                    <span class="input-group-text"><i class="fas fa-font text-info"></i></span>
                                 </div>
                                 <input id="description_document_{{$loop->iteration}}" type="text"
                                     class="form-control @error('description_document') is-invalid @enderror"
@@ -145,31 +146,28 @@
                     <div id="DocumentParent">
                         <input id="docCount" name="docCount" type="hidden" value="{{old('docCount') ?? $docCount}}">
                     </div>
+                    <div class="row" style="padding-top:40px;">
+                        <div class="col-md-3">
 
-                    <div class="row">
-                        <div class="text-center col-md-12">
-                            <button id="addDocument" type="button" class="btn btn-outline-success">
-                                rajouter un document
+                        </div>
+                        <div class="col-md-3">
+                            <button id="addDocument" type="button" class="btn btn-outline-success btn-md">
+                                Rajouter un document
                             </button>
                         </div>
-                    </div>
-                    <div class="row" style="padding-top:40px;">
-                        <div class="col-md-12">
+                        <div class="col-md-5">
                             <div class="form-group">
-                                <button id="submitButton" type="submit"
-                                    class="btn float-right btn-success btn-md pl-5 pr-5 mt-3">
-                                    <h6>Modifier la liste</h6>
+                                <button id="submitButton" type="submit" class="btn btn-success btn-md">
+                                    Valider la liste
                                 </button>
                             </div>
                         </div>
                     </div>
                     {{ Form::close() }}
                     <div id="documentTemplate" class="row" style="display:none">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="input-group form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-file text-white"></i></span>
-                                </div>
+
                                 <input id="document" type="file" class=" @error('document') is-invalid @enderror"
                                     name="document" placeholder="document de l'événement" autocomplete="image" autofocus
                                     value="{{old('document')}}">
@@ -183,7 +181,7 @@
                         <div class="col-md-3">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                    <span class="input-group-text"><i class="fas fa-font text-info"></i></span>
                                 </div>
                                 <input id="title_document" type="text"
                                     class="form-control @error('title_document') is-invalid @enderror"
@@ -200,7 +198,7 @@
                         <div class="col-md-5">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-font text-white"></i></span>
+                                    <span class="input-group-text"><i class="fas fa-font text-info"></i></span>
                                 </div>
                                 <input id="description_document" type="text"
                                     class="form-control @error('description_document') is-invalid @enderror"

@@ -29,7 +29,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{ url('/admin/nextEvents') }}">
             <i class="fas fa-list"></i>
-            <span>prochains événements</span>
+            <span>Prochains événements</span>
         </a>
     </li>
 
@@ -37,14 +37,14 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{ url('/admin/pastEvents') }}">
             <i class="fas fa-history"></i>
-            <span>événements passés</span>
+            <span>Événements passés</span>
         </a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{ url('/admin/newEvent') }}">
             <i class="fas fa-plus-square"></i>
-            <span>nouveau événement</span>
+            <span>Nouvel événement</span>
         </a>
     </li>
 
@@ -76,7 +76,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{ url('/admin/docsToDownloadManagement') }}">
             <i class="fas fa-file"></i>
-            <span>gérer les documents</span>
+            <span>Gérer les documents</span>
         </a>
     </li>
 
@@ -87,7 +87,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{ url('/eventList/asc') }}">
             <i class="fas fa-chevron-left"></i>
-            <span>retour au site web</span>
+            <span>Retour au site web</span>
         </a>
     </li>
 

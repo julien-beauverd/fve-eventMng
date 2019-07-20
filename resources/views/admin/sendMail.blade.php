@@ -39,25 +39,25 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="text-center">Envoyer un mail</h1>
+                            <h1 class="text-center pt-5">Envoyer un mail</h1>
                         </div>
                     </div>
                     {{ Form::open(array('url' => '/sendMail', 'method' => 'POST')) }}
                     @csrf
                     <div class="row" style="padding-top:30px;padding-bottom:30px;">
                         <div class="col-md-12">
-                            <div class="card border-left-success shadow h-100 py-2 mx-auto"
-                                style="background-color:white;max-width:600px;">
+                            <div class="card border-left-success h-100 py-2 mx-auto p-3"
+                                style="background-color:white;max-width:650px;">
                                 <div class="card-body p-0 pl-2 pr-2">
                                     <div class="row">
-                                        <div class="text-center col-md-8">
+                                        <div class="col-md-8">
                                             <button id="specificEvent" type="button" class="btn btn-success">
                                                 Aux participants d'un événement spécifique
                                             </button>
                                         </div>
                                         <div class="text-center col-md-4">
                                             <button id="allMembers" type="button" class="btn btn-outline-success">
-                                                À tout les membres
+                                                À tous les membres
                                             </button>
                                         </div>
                                     </div>
@@ -68,7 +68,7 @@
                                             <div id="selectEvent" class="input-group form-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
-                                                            class="fas fa-list text-white"></i></span>
+                                                            class="fas fa-list text-info"></i></span>
                                                 </div>
                                                 <select id="eventName" name="eventName" class="form-control">
                                                     @foreach($eventsWithUsers as $event)
@@ -82,7 +82,7 @@
                                             <div class="input-group form-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
-                                                            class="fas fa-font text-white"></i></span>
+                                                            class="fas fa-font text-info"></i></span>
                                                 </div>
                                                 <input id="subject" type="text" class="form-control" name="subject"
                                                     placeholder="sujet du mail" required autocomplete="subject"
@@ -92,7 +92,7 @@
                                             <div class="input-group form-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
-                                                            class="fas fa-font text-white"></i></span>
+                                                            class="fas fa-font text-info"></i></span>
                                                 </div>
                                                 <input id="title" type="text" class="form-control" name="title"
                                                     placeholder="titre (facultatif)" autocomplete="subject" autofocus>
@@ -100,7 +100,7 @@
                                             <div class="input-group form-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
-                                                            class="fas fa-font text-white"></i></span>
+                                                            class="fas fa-font text-info"></i></span>
                                                 </div>
                                                 <textarea id="message" class="form-control" name="message"
                                                     placeholder="message (obligatoire)" required autocomplete="message"

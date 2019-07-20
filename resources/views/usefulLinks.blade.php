@@ -6,42 +6,47 @@
     @include('layout.head')
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
-    <style>
-
-    </style>
 </head>
 
 <body id="page-top" class="sidebar-toggled">
-
     <div id="wrapper">
         @include('layout.nav-mobile')
         <div id="content-wrapper" class="d-flex flex-column">
             @include('layout.nav')
-            <div style="background-image: url('{{URL::asset('/img/verify.jpg')}}');background-size: cover">
-                <div id="content">
-                    @include('layout.nav-responsive')
-                    <div class="container-fluid" style="min-height:600px;">
-                        <div class="row usefulLink">
-                            <div class="col-md-6 p-4">
-                                <h2 class="text-center">
+            <div id="content">
+                @include('layout.nav-responsive')
+                <img class="img-fluid" src="{{URL::asset('/img/banner.png')}}" alt="banner" width="100%">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 pt-5">
+                            <h2 class="text-center">Liens utiles</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 d-flex ">
+                            <div class="jumbotron card card-block docToDownload" style="max-width:none">
+                                <h2>
                                     e-shop de la fve
                                 </h2>
-                                <p>
+                                <p class="text-justify">
                                     La fédération vaudoise des entrepreneurs a développé depuis peu un e-shop mettant en
                                     vente de
                                     nombreux produits.
                                 </p>
                                 <p>
                                     <a class="float-right list-item doc text-success btn"
+                                        style="position:absolute;bottom:15px"
                                         href="https://www.fve.ch/accueil.html">lien du e-shop <i
                                             class="fas fa-external-link-alt"></i></a>
                                 </p>
                             </div>
-                            <div class="col-md-6 p-4">
-                                <h2 class="text-center">
+                        </div>
+                        <div class="col-lg-6 d-flex">
+                            <div class="jumbotron card card-block docToDownload" style="max-width:none">
+                                <h2>
                                     Les offres de formation continue
                                 </h2>
-                                <p>
+                                <p class="text-justify">
                                     Vous trouverez sur le lien suivant les offres de formation continue proposées par la
                                     fédération vaudoise des entrepreneurs. Celles-ci couvrent tous les secteurs d’une
                                     entreprise,
@@ -51,16 +56,19 @@
                                 </p>
                                 <p>
                                     <a class="float-right list-item doc text-success btn"
+                                        style="position:absolute;bottom:15px"
                                         href="https://www.ecole-construction.ch/formations/formation-continue/">lien
                                         pour les
                                         formations <i class="fas fa-external-link-alt"></i></a>
                                 </p>
+
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
+
             <!-- End of Main Content -->
             @include('layout.footer')
         </div>

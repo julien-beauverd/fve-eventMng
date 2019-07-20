@@ -39,22 +39,21 @@
                     </div>
                     <div class="row mb-1">
                         <div class="col-md-6 pr-1 pl-1 pt-1">
-                            <a href="{{ url('eventList/asc') }}" type="button"
-                                class="btn btn-lg btn-success btn-block">Agenda</a>
+                            <a href="{{ url('eventList/asc') }}" class="btn btn-lg btn-success btn-block">Agenda</a>
                         </div>
                         <div class="col-md-6 pl-1 pr-1 pt-1">
-                            <a href="{{ url('register') }}" type="button" class="btn btn-lg btn-success btn-block">Créer
+                            <a href="{{ url('register') }}" class="btn btn-lg btn-success btn-block">Créer
                                 un
                                 compte</a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 pr-1 pl-1 pt-1">
-                            <a href="{{ url('about') }}" type="button" class="btn btn-lg btn-success btn-block">À
+                            <a href="{{ url('about') }}" class="btn btn-lg btn-success btn-block">À
                                 propos</a>
                         </div>
                         <div class="col-md-6 pl-1 pr-1 pt-1">
-                            <a href="{{ url('login') }}" type="button" class="btn btn-lg btn-success btn-block">Se
+                            <a href="{{ url('login') }}" class="btn btn-lg btn-success btn-block">Se
                                 connecter</a>
                         </div>
                     </div>

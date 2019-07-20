@@ -72,13 +72,14 @@
             <span>À propos</span>
         </a>
     </li>
-
+    @if(Auth::check())
     <li class="nav-item">
         <a class="nav-link collapsed" style="color:#212529;" href="{{ url('/profile') }}">
             <i class="far fa-user" style="color:#212529;"></i>
             <span>Mon profil</span>
         </a>
     </li>
+    @endif
     <hr class="sidebar-divider" style="background-color:#212529;">
 
     <div class="sidebar-heading" style="color:#212529;">

@@ -75,6 +75,10 @@ html {
     background-color: #009932
 }
 
+.text-info{
+    color: #43ec7b !important;
+}
+
 .text-success {
     color: #009932;
 }
@@ -117,6 +121,7 @@ html {
 }
 
 .footerCustom {
+    margin-top: 0 !important;
     margin-bottom: 0 !important;
     padding-bottom: 48px;
     background-color: #fff
@@ -145,11 +150,15 @@ html {
     margin-top: auto;
     margin-bottom: auto;
     min-width: 300px;
-    background-color: rgba(0, 0, 0, .5)
+    background-color: rgba(0, 0, 0, .6)
 }
 
 .card-header h3 {
     color: #fff
+}
+
+#wrapper{
+    min-height: 900px;
 }
 
 .input-group-prepend span {
@@ -161,8 +170,8 @@ html {
 
 .docToDownload {
     background-color: #fff;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     padding: 30px;
 }
 

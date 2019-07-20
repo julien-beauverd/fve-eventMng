@@ -17,90 +17,94 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="text-center">Tableau de bord</h1>
+                            <h1 class="text-center pt-5">Tableau de bord</h1>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6" style="padding-top:80px;">
-                            <h5 class="text-success">
+                    <div class="row" style="padding-top:80px;">
+                        <div class="col-lg-4">
+                            <h5 class="text-success pb-4">
                                 Nombre d'événements de la fédération vaudoise des entrepreneurs
                             </h5>
                             <div class="row">
-                                <div class="col-md-12 text-center">
+                                <div class="col-md-12">
                                     <h1 class="counter-count display-4 pr-5" style="display:inline">{{$eventCount}}</h1>
                                     <i class="far fa-calendar-alt fa-4x" style="display:inline"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6" style="padding-top:80px;">
-                            <h5 class="text-success">
-                                Nombre total de compte crée
+                        <div class="col-lg-4">
+                            <h5 class="text-success pb-5">
+                                Nombre total de comptes créés
                             </h5>
                             <div class="row">
-                                <div class="col-md-12 text-center">
+                                <div class="col-md-12">
                                     <h1 class="counter-count display-4 pr-5" style="display:inline">{{ $totalAccount }}
                                     </h1>
                                     <i class="fas fa-user-circle fa-4x" style="display:inline"></i>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row" style="padding-top:80px;">
-                        <div class="col-md-6">
-                            <h5 class="text-success">
-                                Prochain événement
-                            </h5>
+                        <div class="col-lg-4">
                             <div class="row">
-                                <div class="col-md-12 text-center">
+                                <div class="col-12">
+                                    <h5 class="text-success pb-5">
+                                        Prochain événement
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
                                     <h1 class="counter-count display-4 pr-1" style="display:inline;">
                                         {{$participantCount[0]->count}}</h1>
                                     <h4 class="pr-5" style="display:inline;"> Participants</h4>
                                     <i class="fas fa-users fa-4x" style="display:inline;"></i>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12 pointer"
+                                    onclick="window.location.href = '{{ url('/event/'.$event->id.'') }}';">
+                                    <div class="row pt-3">
+                                        <div class="col-md-12">
+                                            <img class="img-fluid" src="{{URL::asset('/img/events/'.$event->image.'')}}"
+                                                alt="img event">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 pt-3">
+                                            <h5>
+                                                {{ $event->name }}
+                                            </h5>
+                                        </div>
+                                        <div class="col-md-4 pt-3">
+                                            <h6>
+                                                <?php setlocale (LC_TIME, "French") ?>
+                                                {{strftime("%A %e %B %Y",strtotime($event ->date))}}
+                                            </h6>
+                                        </div>
+                                        <div class="col-md-2 pt-3">
+                                            <h6>
+                                                {{date("H:i",strtotime($event->topics[0]->time))}}
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>
+                                                {{ $event->location->street }}
+                                                {{ $event->location->street_number }},
+                                                {{ $event->location->zip_code }}
+                                                {{ $event->location->city }}
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pointer col-md-6"
-                            onclick="window.location.href = '{{ url('/event/'.$event->id.'') }}';">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <img class="img-fluid" src="{{URL::asset('/img/events/'.$event->image.'')}}"
-                                        alt="img event">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h4>
-                                        {{ $event->name }}
-                                    </h4>
-                                </div>
-                                <div class="col-md-4">
-                                    <h5>
-                                        <?php setlocale (LC_TIME, "French") ?>
-                                        {{strftime("%A %e %B %Y",strtotime($event ->date))}}
-                                    </h5>
-                                </div>
-                                <div class="col-md-2">
-                                    <h5>
-                                        {{ $event->topics[0]->time }}
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h5>
-                                        {{ $event->location->street }} {{ $event->location->street_number }},
-                                        {{ $event->location->zip_code }}
-                                        {{ $event->location->city }}
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-                    <div class="row" style="padding-top:100px;">
+                    <div class="row" style="padding-top:30px;">
                         <div class="col-md-12">
                             <h3 class="text-success">
-                                Liste complète de tout les membres
+                                Liste complète de tous les membres
                             </h3>
                         </div>
                     </div>
