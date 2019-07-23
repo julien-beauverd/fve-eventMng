@@ -66,6 +66,7 @@
       h5,
       .col-sm-8 {
         text-align: center;
+        
       }
 
       .pointer h4 {
@@ -141,14 +142,17 @@
             <div class="col-md-12">
               <div class="row" style="padding-top:10px;">
                 <div class="col-sm-8">
+                  <h5 class="pr-4" style="display:inline-flex;vertical-align: top;">
+                    Tri
+                  </h5>
                   <h5 style="display:inline-flex">
-                    <a href="{{ url('/eventList/asc') }}" class="text-dark pr-5">
-                      Tri chronologique
+                    <a href="{{ url('/eventList/asc') }}" class="text-dark pr-3">
+                      <i class="far fa-arrow-alt-circle-up fa-2x"></i>
                     </a>
                   </h5>
                   <h5 style="display:inline-flex">
                     <a href="{{ url('/eventList/desc') }}" class="text-dark">
-                      Tri antichronologique
+                      <i class="far fa-arrow-alt-circle-down fa-2x"></i>
                     </a>
                   </h5>
                 </div>
