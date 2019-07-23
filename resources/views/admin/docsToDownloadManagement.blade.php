@@ -158,7 +158,7 @@
                         <div class="col-md-5">
                             <div class="form-group">
                                 <button id="submitButton" type="submit" class="btn btn-success btn-md">
-                                    Valider la liste
+                                    Valider les modifications
                                 </button>
                             </div>
                         </div>

@@ -29,7 +29,7 @@
 
             <div id="content">
                 @include('layout.nav-responsive')
-                <img class="img-fluid" src="{{URL::asset('/img/banner.png')}}" alt="banner" width="100%">
+                <img class="img-fluid" src="{{URL::asset('/img/calendar.png')}}" alt="calendar" width="100%">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
