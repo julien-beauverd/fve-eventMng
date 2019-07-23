@@ -31,6 +31,9 @@
                             <h1 class="text-center pt-5">Les prochains événements</h1>
                         </div>
                     </div>
+                    @if($events == '')
+                    <h3 class="text-center pt-5">Il n'y a pas d'événement prévu pour le moment.</h3>
+                    @else
                     @foreach($events as $event)
                     <div class="row" style="padding-top:30px;">
                         <div class="col-md-12 mb-2">
@@ -59,7 +62,7 @@
                                                     <div class="col-md-5 text-right">
                                                         <?php setlocale (LC_ALL, "fr_FR") ?>
                                                         <h6 class="mb-0">
-                                                            {{strftime("%A %e %B %Y",strtotime($event->date))}}</h6>
+                                                            {{strftime("%e %B %Y",strtotime($event->date))}}</h6>
                                                     </div>
                                                 </div>
                                             </div>
@@ -78,6 +81,10 @@
                                                 class='list-group-item list-group-item-action btn-nextEvents p-2'>
                                                 Modifier cet événement
                                             </a>
+                                            <a id="btnDel-{{$event->id}}" data-toggle="modal" href="#"
+                                                class='list-group-item list-group-item-action btn-nextEventsDel p-2'>
+                                                Supprimer cet événement
+                                            </a>
                                         </div>
                                         <div class="col-md-1 pb-0 text-right" data-container="body"
                                             data-toggle="popover-1" data-placement="top">
@@ -92,8 +99,35 @@
                         </div>
                     </div>
                     @endforeach
+                    @endif
                 </div>
-
+                @foreach($events as $event)
+                <div class="modal fade" id="ModalEventDel-{{$event->id}}" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    Confirmation
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Êtes-vous sûr de vouloir supprimer cet événement ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                    onclick="window.location.href = '{{ url('admin/deleteEvent/'.$event->id.'') }}';">Oui,
+                                    je suis
+                                    sûr.</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
             <!-- End of Main Content -->
 
@@ -107,3 +141,13 @@
 </body>
 
 </html>
+<script>
+    $(document).ready(function () {
+    
+    $(document).on("click", ".btn-nextEventsDel", function(e) {
+        var lastChar = e.target.id[e.target.id.length -1];
+        $('#ModalEventDel-'+lastChar).modal();
+    });
+});
+        
+</script>

@@ -163,6 +163,9 @@
                   </h5>
                 </div>
               </div>
+              @if(count($events) == 0)
+              <h3 class="text-center pt-5">Il n'y a pas d'événement prévu pour le moment.</h3>
+              @else
               @foreach ($events as $event)
               @if($loop->odd)
               <div class="row">
@@ -192,7 +195,7 @@
                     <div class="col-lg-4">
                       <h5 class="text-white">
                         <?php setlocale (LC_ALL, "fr_FR") ?>
-                        {{strftime("%A %e %B %Y",strtotime($event->date))}}
+                        {{strftime("%e %B %Y",strtotime($event->date))}}
                       </h5>
                     </div>
                     <div class="col-lg-1 pl-0">
@@ -238,7 +241,7 @@
                     <div class="col-lg-4">
                       <h5 class="text-white">
                         <?php setlocale (LC_ALL, "fr_FR") ?>
-                        {{strftime("%A %e %B %Y",strtotime($event->date))}}
+                        {{strftime("%e %B %Y",strtotime($event->date))}}
                       </h5>
                     </div>
                     <div class="col-lg-1 pl-0">
@@ -260,6 +263,7 @@
               </div>
               @endif
               @endforeach
+              @endif
             </div>
           </div>
         </div>

@@ -23,6 +23,9 @@
                             <h2 class="text-center">Documents à télécharger</h2>
                         </div>
                     </div>
+                    @if(count($docsToDownload) == 0)
+                    <h4 class="text-center pt-5">Il n'y a pas de document à télécharger pour le moment.</h4>
+                    @else
                     @foreach($docsToDownload as $docToDownload)
                     @if($loop->iteration == 1 || $loop->iteration % 4 == 0)
                     <div class="row">
@@ -46,6 +49,7 @@
                     </div>
                     @endif
                     @endforeach
+                    @endif
                 </div>
             </div>
             <!-- End of Main Content -->

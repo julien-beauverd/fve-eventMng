@@ -58,6 +58,8 @@ Route::get('admin/nextEvents/{id}', 'AdminController@showNextEventsPage')->middl
 Route::get('admin/modifyEvent/{id}', 'AdminController@showModifyEvent')->middleware('verified');
 Route::put('admin/modifyEvent/{id}', 'AdminController@modifyEvent')->middleware('verified');
 
+Route::get('admin/deleteEvent/{id}', 'AdminController@deleteEvent')->middleware('verified');
+
 Route::get('admin/docsToDownloadManagement', 'AdminController@showDocsToDownload')->middleware('verified');
 Route::put('admin/docsToDownloadManagement', 'AdminController@modifyDocsToDownload')->middleware('verified');
 

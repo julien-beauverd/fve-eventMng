@@ -1417,7 +1417,8 @@
                                 @enderror
                             </div>
                             <div class="col-md-12">
-                                <p class="mb-0">Dimension recommandée :</p><p> 2000 x 730</p>
+                                <p class="mb-0">Dimension recommandée :</p>
+                                <p> 2000 x 730</p>
                                 <p><i class="fas fa-exclamation-circle"></i> Taille max de l'image : 2MB</p>
                             </div>
                         </div>

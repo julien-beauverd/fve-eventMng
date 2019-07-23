@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     @include('layout.head')
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
@@ -55,12 +55,19 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <h1 class="counter-count display-4 pr-1" style="display:inline;">
-                                        {{$participantCount[0]->count}}</h1>
+                                        @if($participantCount == 0)
+                                        0
+                                        @else
+                                        {{$participantCount[0]->count}}
+                                        @endif
+                                    </h1>
                                     <h4 class="pr-5" style="display:inline;"> Participants</h4>
                                     <i class="fas fa-users fa-4x" style="display:inline;"></i>
                                 </div>
                             </div>
                             <div class="row">
+                                @if($event == '')
+                                @else
                                 <div class="col-md-12 pointer"
                                     onclick="window.location.href = '{{ url('/event/'.$event->id.'') }}';">
                                     <div class="row pt-3">
@@ -77,8 +84,8 @@
                                         </div>
                                         <div class="col-md-4 pt-3">
                                             <h6>
-                                                <?php setlocale (LC_TIME, "French") ?>
-                                                {{strftime("%A %e %B %Y",strtotime($event ->date))}}
+                                                <?php setlocale (LC_TIME, "fr_FR") ?>
+                                                {{strftime("%e %B %Y",strtotime($event ->date))}}
                                             </h6>
                                         </div>
                                         <div class="col-md-2 pt-3">
@@ -98,6 +105,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>

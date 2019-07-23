@@ -10,11 +10,11 @@
         <header>
             <div class="row pb-5">
                 <div class="col-3">
-                    <img class="img-fluid float-right" src="{{URL::asset('/img/exclamation-gauche.png')}}" width="120px"
+                    <img class="img-fluid float-right pt-5" src="{{URL::asset('/img/exclamation-gauche.png')}}" width="120px"
                         alt="point d'exclamation, logo de la fve">
                 </div>
                 <div class="col-6">
-                    <div class="row pt-5">
+                    <div class="row" style="padding-top:100px;">
                         <div class="col-md-12 text-center">
                             <img class="img-fluid" style="min-width:180px;" src="{{URL::asset('/img/logo.png')}}"
                                 alt="logo">
@@ -37,7 +37,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="row mb-1">
+                    <div class="row">
                         <div class="col-md-6 pr-1 pl-1 pt-1">
                             <a href="{{ url('eventList/asc') }}" class="btn btn-lg btn-success btn-block">Agenda</a>
                         </div>

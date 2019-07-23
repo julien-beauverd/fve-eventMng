@@ -188,7 +188,7 @@
                     <div class="col-lg-4">
                       <h5 class="text-white">
                         <?php setlocale (LC_ALL, "fr_FR") ?>
-                        {{strftime("%A %e %B %Y",strtotime($event->date))}}
+                        {{strftime("%e %B %Y",strtotime($event->date))}}
                       </h5>
                     </div>
                     <div class="col-lg-1 pl-0">
@@ -233,7 +233,7 @@
                     <div class="col-lg-4">
                       <h5 class="text-white">
                         <?php setlocale (LC_ALL, "fr_FR") ?>
-                        {{strftime("%A %e %B %Y",strtotime($event->date))}}
+                        {{strftime("%e %B %Y",strtotime($event->date))}}
                       </h5>
                     </div>
                     <div class="col-lg-1 pl-0">

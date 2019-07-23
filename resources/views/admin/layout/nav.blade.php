@@ -3,7 +3,7 @@
     id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center p-0" style="background-color:white;">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center p-0 pl-1" style="background-color:white;">
         <img id="logo" src="{{URL::asset('/img/logo-2.png')}}" width="100%">
     </a>
 

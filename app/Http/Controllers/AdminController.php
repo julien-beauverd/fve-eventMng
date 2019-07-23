@@ -31,10 +31,16 @@ class AdminController extends Controller
             return view('errors/404');
         } else {
             $event = Event::with('location', 'topics')->where('date_show_end', '>=', date('Y-m-d'))->orderBy('date', 'asc')->first();
-            $participantsCount = DB::select("SELECT COUNT(u.id) AS 'count' FROM users AS u INNER JOIN user_event AS ue ON ue.user_id = u.id INNER JOIN events AS e ON e.id = ue.event_id WHERE e.id = " . $event->id . "");
+            if ($event == null) {
+                $event = 0;
+                $participantsCount = 0;
+                $eventCount = 0;
+            } else {
+                $participantsCount = DB::select("SELECT COUNT(u.id) AS 'count' FROM users AS u INNER JOIN user_event AS ue ON ue.user_id = u.id INNER JOIN events AS e ON e.id = ue.event_id WHERE e.id = " . $event->id . "");
+                $eventCount = Event::all()->count();
+            }
             $users = User::paginate(12);
             $totalAccount = User::all()->count();
-            $eventCount = Event::all()->count();
             return view('admin/dashboard')->with(['event' => $event, 'users' => $users, 'participantCount' => $participantsCount, 'eventCount' => $eventCount, 'totalAccount' => $totalAccount]);
         }
     }
@@ -100,44 +106,117 @@ class AdminController extends Controller
      * Display the newEvent view
      *
      */
+    public function deleteEvent($id)
+    {
+        if (Auth::User()->is_admin == false) {
+            return view('errors/404');
+        } else {
+
+            
+            Event::destroy($id);
+
+            $events = Event::with('location', 'topics')->where('date', '>=', date('Y-m-d'))->orderBy('date', 'asc')->get();
+
+            $usersArray = array();
+
+            if (count($events) == 0) {
+                return view('admin/nextEvents')->with(
+                    [
+                        'events' => '',
+                        'nameArray' => '',
+                        'firstNameArray' => '',
+                        'companyNameArray' => '',
+                        'emailArray' => ''
+                    ]
+                );
+            } else {
+                foreach ($events as $event) {
+                    $users = DB::select("SELECT * FROM users AS u
+                    INNER JOIN user_event AS ue ON ue.user_id = u.id
+                    WHERE ue.event_id = '.$event->id.'");
+                    $nameArray[] = $event->id;
+                    $firstNameArray[] = $event->id;
+                    $companyNameArray[] = $event->id;
+                    $emailArray[] = $event->id;
+                    foreach ($users as $user) {
+                        $nameArray[] = $user->name;
+                        $firstNameArray[] = $user->first_name;
+                        $companyNameArray[] = $user->company_name;
+                        $emailArray[] = $user->email;
+                    }
+                    $nameArray[] = $event->id;
+                    $firstNameArray[] = $event->id;
+                    $companyNameArray[] = $event->id;
+                    $emailArray[] = $event->id;
+                }
+                return view('admin/nextEvents')->with(
+                    [
+                        'events' => $events,
+                        'nameArray' => $nameArray,
+                        'firstNameArray' => $firstNameArray,
+                        'companyNameArray' => $companyNameArray,
+                        'emailArray' => $emailArray
+                    ]
+                );
+            }
+        }
+    }
+
+    /**
+     * Display the newEvent view
+     *
+     */
     public function showNextEventsPage()
     {
         if (Auth::User()->is_admin == false) {
             return view('errors/404');
         } else {
 
+
             $events = Event::with('location', 'topics')->where('date', '>=', date('Y-m-d'))->orderBy('date', 'asc')->get();
 
             $usersArray = array();
 
-            foreach ($events as $event) {
-                $users = DB::select("SELECT * FROM users AS u
-                INNER JOIN user_event AS ue ON ue.user_id = u.id
-                WHERE ue.event_id = '.$event->id.'");
-                $nameArray[] = $event->id;
-                $firstNameArray[] = $event->id;
-                $companyNameArray[] = $event->id;
-                $emailArray[] = $event->id;
-                foreach ($users as $user) {
-                    $nameArray[] = $user->name;
-                    $firstNameArray[] = $user->first_name;
-                    $companyNameArray[] = $user->company_name;
-                    $emailArray[] = $user->email;
+            if (count($events) == 0) {
+                return view('admin/nextEvents')->with(
+                    [
+                        'events' => '',
+                        'nameArray' => '',
+                        'firstNameArray' => '',
+                        'companyNameArray' => '',
+                        'emailArray' => ''
+                    ]
+                );
+            } else {
+                foreach ($events as $event) {
+                    $users = DB::select("SELECT * FROM users AS u
+                    INNER JOIN user_event AS ue ON ue.user_id = u.id
+                    WHERE ue.event_id = '.$event->id.'");
+                    $nameArray[] = $event->id;
+                    $firstNameArray[] = $event->id;
+                    $companyNameArray[] = $event->id;
+                    $emailArray[] = $event->id;
+                    foreach ($users as $user) {
+                        $nameArray[] = $user->name;
+                        $firstNameArray[] = $user->first_name;
+                        $companyNameArray[] = $user->company_name;
+                        $emailArray[] = $user->email;
+                    }
+                    $nameArray[] = $event->id;
+                    $firstNameArray[] = $event->id;
+                    $companyNameArray[] = $event->id;
+                    $emailArray[] = $event->id;
                 }
-                $nameArray[] = $event->id;
-                $firstNameArray[] = $event->id;
-                $companyNameArray[] = $event->id;
-                $emailArray[] = $event->id;
+                return view('admin/nextEvents')->with(
+                    [
+                        'events' => $events,
+                        'nameArray' => $nameArray,
+                        'firstNameArray' => $firstNameArray,
+                        'companyNameArray' => $companyNameArray,
+                        'emailArray' => $emailArray
+                    ]
+                );
             }
-            return view('admin/nextEvents')->with(
-                [
-                    'events' => $events,
-                    'nameArray' => $nameArray,
-                    'firstNameArray' => $firstNameArray,
-                    'companyNameArray' => $companyNameArray,
-                    'emailArray' => $emailArray
-                ]
-            );
         }
     }
 
@@ -356,6 +435,9 @@ class AdminController extends Controller
 
             $events = Event::with('location', 'topics')->where('date', '<', date('Y-m-d'))->orderBy('date', 'desc')->get();
 
+            if (count($events) == 0) {
+                $events = '';
+            }
             return view('admin/pastEvents')->with(['events' => $events]);
         }
     }

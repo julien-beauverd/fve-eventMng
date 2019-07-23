@@ -28,6 +28,9 @@
                             <h1 class="text-center pt-5">Les événements passés</h1>
                         </div>
                     </div>
+                    @if($events == '')
+                    <h3 class="text-center pt-5">Il n'y a pas d'événement passé pour le moment.</h3>
+                    @else
                     @foreach($events as $event)
                     <div class="row" style="padding-top:30px;">
                         <div class="pointer col-md-12"
@@ -56,7 +59,7 @@
                                                     <div class="col-md-5 text-right">
                                                         <?php setlocale (LC_ALL, "fr_FR") ?>
                                                         <h6 class="mb-0">
-                                                            {{strftime("%A %e %B %Y",strtotime($event->date))}}</h6>
+                                                            {{strftime("%e %B %Y",strtotime($event->date))}}</h6>
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,6 +70,7 @@
                         </div>
                     </div>
                     @endforeach
+                    @endif
                 </div>
 
             </div>

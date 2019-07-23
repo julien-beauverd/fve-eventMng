@@ -9,16 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class DocumentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $documents = Document::all();
-        return response()->json($documents);
-    }
 
     /**
      * Store a newly created resource in storage.

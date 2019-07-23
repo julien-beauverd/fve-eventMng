@@ -141,6 +141,11 @@ html {
     color: #fff
 }
 
+.btn-nextEventsDel:hover {
+    background-color: #e74a3b;
+    color: #fff
+}
+
 .popover-body {
     padding: 0
 }
