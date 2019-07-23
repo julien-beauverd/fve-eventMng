@@ -111,7 +111,7 @@
                                                     <div class="form-group text-center">
                                                         <button type="submit"
                                                             class="btn btn-success btn-md pl-5 pr-5 mt-3">
-                                                            <h6>Envoyer ce mail</h6>
+                                                            Envoyer ce mail
                                                         </button>
                                                     </div>
                                                 </div>

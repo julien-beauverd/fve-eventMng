@@ -1478,7 +1478,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <ul>
+                                    <ul class="pl-4">
                                         @foreach($event->documents as $document)
                                         <li class="list-item doc">
                                             <a id="doc-{{$loop->iteration}}"
@@ -1499,7 +1499,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 pl-0">
                                     <div id="DocumentParent">
                                         <input id="docCount" name="docCount" type="hidden" value="0">
                                         <div id="dimensionDoc" class="col-md-12">
@@ -1510,7 +1510,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="text-center col-md-12">
+                                <div class="col-md-12">
                                     <button id="addDocument" type="button" class="btn btn-outline-success">
                                         rajouter un document
                                     </button>
@@ -1525,7 +1525,7 @@
                             <div class="form-group">
                                 <button id="submitButton" type="submit"
                                     class="btn float-left btn-success btn-md pl-5 pr-5 mt-3 mb-3">
-                                    <h6>Modifier l'événement</h6>
+                                    Modifier l'événement
                                 </button>
                             </div>
                         </div>

@@ -146,9 +146,9 @@
                                                 </button>
                                             </div>
                                             <div class="text-white mt-2">
-                                                <p class="mb-0">Le mot de passe doit respecter les critères
+                                                <p class="mb-0" style="font-size:15px;">Le mot de passe doit respecter les critères
                                                     suivants:</p>
-                                                <ul>
+                                                <ul style="padding-left:18px;font-size:15px;">
                                                     <li>minimum 8 caractères</li>
                                                     <li>minimum 1 chiffre</li>
                                                     <li>minimum 1 minuscule</li>

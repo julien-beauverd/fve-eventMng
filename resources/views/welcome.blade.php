@@ -14,7 +14,7 @@
                         alt="point d'exclamation, logo de la fve">
                 </div>
                 <div class="col-6">
-                    <div class="row" style="padding-top:100px;">
+                    <div class="row" style="padding-top:120px;">
                         <div class="col-md-12 text-center">
                             <img class="img-fluid" style="min-width:180px;" src="{{URL::asset('/img/logo.png')}}"
                                 alt="logo">

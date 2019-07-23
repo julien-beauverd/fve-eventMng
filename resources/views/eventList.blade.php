@@ -9,15 +9,15 @@
   <style>
     @media (max-width: 1300px) {
       .pointer h4 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
 
       .pointer h5 {
-        font-size: 1.15rem;
+        font-size: 1.10rem;
       }
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1110px) {
       .pointer h4 {
         font-size: 1.10rem;
       }
@@ -27,7 +27,7 @@
       }
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 991px) {
 
       .col-lg-6 {
         padding: 30px;
@@ -190,13 +190,13 @@
                         alt="img event">
                     </div>
                   </div>
-                  <div class="row mr-1 ml-1 pr-0 pl-0" style="background-color:{{$backgroundColor}};">
+                  <div class="row mr-1 ml-1 pr-0 pl-0 pt-2" style="background-color:{{$backgroundColor}};">
                     <div class="col-lg-7 pr-0">
                       <h4 class="text-white">
                         {{ $event->name }}
                       </h4>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 pl-1 pr-1">
                       <h5 class="text-white">
                         <?php setlocale (LC_ALL, "fr_FR") ?>
                         {{strftime("%e %B %Y",strtotime($event->date))}}
@@ -236,7 +236,7 @@
                         alt="img event">
                     </div>
                   </div>
-                  <div class="row mr-1 ml-1 pr-0 pl-0" style="background-color:{{$backgroundColor}};">
+                  <div class="row mr-1 ml-1 pr-0 pl-0 pt-2" style="background-color:{{$backgroundColor}};">
                     <div class="col-lg-7 pr-0">
                       <h4 class="text-white">
                         {{ $event->name }}

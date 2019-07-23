@@ -45,6 +45,34 @@ class AdminController extends Controller
         }
     }
 
+
+    /**
+     * Display the dashboard
+     *
+     */
+    public function deleteUser($id)
+    {
+        if (Auth::User()->is_admin == false) {
+            return view('errors/404');
+        } else {
+
+            User::destroy($id);
+
+            $event = Event::with('location', 'topics')->where('date_show_end', '>=', date('Y-m-d'))->orderBy('date', 'asc')->first();
+            if ($event == null) {
+                $event = 0;
+                $participantsCount = 0;
+                $eventCount = 0;
+            } else {
+                $participantsCount = DB::select("SELECT COUNT(u.id) AS 'count' FROM users AS u INNER JOIN user_event AS ue ON ue.user_id = u.id INNER JOIN events AS e ON e.id = ue.event_id WHERE e.id = " . $event->id . "");
+                $eventCount = Event::all()->count();
+            }
+            $users = User::paginate(12);
+            $totalAccount = User::all()->count();
+            return view('admin/dashboard')->with(['event' => $event, 'users' => $users, 'participantCount' => $participantsCount, 'eventCount' => $eventCount, 'totalAccount' => $totalAccount]);
+        }
+    }
+
     public function sendMail(Request $request)
     {
 
@@ -112,7 +140,7 @@ class AdminController extends Controller
             return view('errors/404');
         } else {
 
-            
+
             Event::destroy($id);
 
             $events = Event::with('location', 'topics')->where('date', '>=', date('Y-m-d'))->orderBy('date', 'asc')->get();

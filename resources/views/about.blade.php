@@ -9,23 +9,24 @@
   <style>
     @media (max-width: 992px) {
 
-      #imgBatiment{
+      #imgBatiment {
         order: 0;
-        padding-bottom: 20px; 
+        padding-bottom: 20px;
       }
-      #contentText{
-        order:1;
+
+      #contentText {
+        order: 1;
       }
-      .col-lg-6{
+
+      .col-lg-6 {
         text-align: center !important;
         padding: 0 0 20px 0 !important;
       }
-      #logo{
+
+      #logo {
         padding: 0 0 20px 0 !important;
       }
     }
-
-
   </style>
 </head>
 
@@ -42,15 +43,15 @@
         <img class="img-fluid" src="{{URL::asset('/img/banner-about.png')}}" alt="banner" width="100%">
         <div class="container-fluid">
           <div class="row ml-5 mr-5 mt-5">
-            <div class="col-lg-6 pr-3 pl-5 text-right">
-              <img id="logo" class="img-fluid pb-5 pt-0 pr-5 pl-5" style="background-color: transparent;"
+            <div class="col-lg-6 pr-3 pl-5 text-left">
+              <img id="logo" class="img-fluid pb-5 pt-0 pr-5" style="background-color: transparent;"
                 src="{{URL::asset('/img/fve-logo.png')}}" alt="logo fve" width="500rem">
             </div>
             <div class="col-lg-6 pl-3 pr-5">
               <p class="text-left">
                 La fédération propose de nombreuses prestations à ses membres, dont :
               </p>
-              <ul class="text-left">
+              <ul class="text-left pl-3">
                 <li>
                   Les assurances sociales (1er et 2ème piliers, assurances conventionnelles)
                 </li>
@@ -86,7 +87,7 @@
           <div class="row ml-5 mr-5 mt-2">
             <div id="contentText" class="col-lg-6 pr-3 pl-5">
               <p class="text-justify">
-                La Fédération vaudoise des entrepreneurs est la plus importante association patronale de la
+                La fédération vaudoise des entrepreneurs est la plus importante association patronale de la
                 construction dans le canton de Vaud. Elle réunit les métiers du gros œuvre, du second œuvre et de la
                 construction métallique. Près de 2’800 entreprises et 22’000 travailleurs bénéficient de ces prestations
                 et
@@ -102,7 +103,7 @@
                 plus de 2’000 personnes pour la formation continue.
               </p>
             </div>
-            <div id="imgBatiment" class="col-lg-6 pl-3 pr-5" style="padding-left:37px!important;">
+            <div id="imgBatiment" class="col-lg-6 pr-5" style="padding-left:18px!important;">
               <img class="img-fluid" src="{{URL::asset('/img/batiment-fve.png')}}" alt="batiment fve" width="80%">
             </div>
           </div>
@@ -147,11 +148,11 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <h2 class="display-5" style="display:inline">Depuis </h2>
+                  <h5 class="display-5" style="display:inline">Depuis </h5>
                   <h2 class="counter-count display-4" style="display:inline">
                     1904
                   </h2>
-                  <p class="pt-4 mb-0">
+                  <p class="mb-0" style="padding-top:30px;">
                     elle s'engage à soutenir les métiers du gros oeuvre,</p>
                   <p> du second oeuvre et de la construction
                     métallique.

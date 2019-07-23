@@ -1402,24 +1402,32 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="col-md-12">
-                                <h6 class="font-weight-bold">Bannière de l'événement</h6>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h6 class="font-weight-bold">Bannière de l'événement</h6>
+                                </div>
                             </div>
-                            <div class="input-group form-group">
-
-                                <input id="image" type="file" class=" @error('image_upload') is-invalid @enderror"
-                                    name="image" placeholder="bannière de l'événement" accept="image/*" required
-                                    autocomplete="image" autofocus value="{{old('image')}}">
-                                @error('image_upload')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group form-group">
+                                        <input id="image" type="file"
+                                            class=" @error('image_upload') is-invalid @enderror" name="image"
+                                            placeholder="bannière de l'événement" accept="image/*" required
+                                            autocomplete="image" autofocus value="{{old('image')}}">
+                                        @error('image_upload')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-12">
-                                <p class="mb-0">Dimension recommandée :</p>
-                                <p> 2000 x 730</p>
-                                <p><i class="fas fa-exclamation-circle"></i> Taille max de l'image : 2MB</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="mb-0">Dimension recommandée :</p>
+                                    <p> 2000 x 730</p>
+                                    <p><i class="fas fa-exclamation-circle"></i> Taille max de l'image : 2MB</p>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-5">
@@ -1450,7 +1458,9 @@
                                 <div id="dimensionDoc" class="col-md-12">
                                     <p><i class="fas fa-exclamation-circle"></i> Taille max d'un document : 8MB</p>
                                 </div>
-                                <div class="text-center col-md-12">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
                                     <button id="addDocument" type="button" class="btn btn-outline-success">
                                         Rajouter un document
                                     </button>
@@ -1466,7 +1476,7 @@
                             <div class="form-group">
                                 <button id="submitButton" type="submit"
                                     class="btn float-left btn-success btn-md pl-5 pr-5 mt-3 mb-3">
-                                    <h6>Créer cet événement</h6>
+                                    Créer cet événement
                                 </button>
                             </div>
                         </div>

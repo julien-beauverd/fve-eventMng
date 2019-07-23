@@ -60,6 +60,8 @@ Route::put('admin/modifyEvent/{id}', 'AdminController@modifyEvent')->middleware(
 
 Route::get('admin/deleteEvent/{id}', 'AdminController@deleteEvent')->middleware('verified');
 
+Route::get('admin/deleteUser/{id}', 'AdminController@deleteUser')->middleware('verified');
+
 Route::get('admin/docsToDownloadManagement', 'AdminController@showDocsToDownload')->middleware('verified');
 Route::put('admin/docsToDownloadManagement', 'AdminController@modifyDocsToDownload')->middleware('verified');
 

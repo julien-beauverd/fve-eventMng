@@ -34,7 +34,7 @@
                                     nombreux produits.
                                 </p>
                                 <p>
-                                    <a class="float-right list-item doc text-success btn"
+                                    <a class="float-right list-item doc text-success btn pl-0"
                                         style="position:absolute;bottom:15px"
                                         href="https://www.fve.ch/accueil.html">lien du e-shop <i
                                             class="fas fa-external-link-alt"></i></a>
@@ -55,7 +55,7 @@
                                     administratifs.
                                 </p>
                                 <p>
-                                    <a class="float-right list-item doc text-success btn"
+                                    <a class="float-right list-item doc text-success btn pl-0"
                                         style="position:absolute;bottom:15px"
                                         href="https://www.ecole-construction.ch/formations/formation-continue/">lien
                                         pour les
