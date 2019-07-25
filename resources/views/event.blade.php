@@ -286,13 +286,21 @@
                                         <i class="fas fa-map-marker-alt text-success fa-2x"></i>
                                     </div>
                                     <div class="col-9 pt-2">
-                                        <h5>
-                                            {{ $event[0]->location->street}}
-                                            {{ $event[0]->location->street_number}}
-                                        </h5>
-                                        <h5>
-                                            {{ $event[0]->location->city}} {{ $event[0]->location->zip_code}}
-                                        </h5>
+                                        <a href=" http://maps.google.com/?q={{ $event[0]->location->street}} {{ $event[0]->location->street_number}} {{ $event[0]->location->city}} {{ $event[0]->location->zip_code}}"
+                                            style="color:#212529" data-toggle="tooltip" data-placement="left"
+                                            title="Ouvrir dans Google maps">
+                                            <h5>
+                                                {{ $event[0]->location->street}}
+                                                {{ $event[0]->location->street_number}}
+
+                                            </h5>
+                                            <h5>
+                                                {{ $event[0]->location->building}}
+                                            </h5>
+                                            <h5>
+                                                {{ $event[0]->location->city}} {{ $event[0]->location->zip_code}}
+                                            </h5>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -473,4 +481,10 @@
                 $("#confirmationUnsubModal").modal();
             }
         }
+    $(document).ready(function () {
+        $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+        })
+    });
+
 </script>
