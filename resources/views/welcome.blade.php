@@ -10,8 +10,8 @@
         <header>
             <div class="row pb-5">
                 <div class="col-3">
-                    <img class="img-fluid float-right pt-5" src="{{URL::asset('/img/exclamation-gauche.png')}}" width="120px"
-                        alt="point d'exclamation, logo de la fve">
+                    <img class="img-fluid float-right pt-5" src="{{URL::asset('/img/exclamation-gauche.png')}}"
+                        width="120px" alt="point d'exclamation, logo de la fve">
                 </div>
                 <div class="col-6">
                     <div class="row" style="padding-top:120px;">
@@ -72,10 +72,14 @@
             "Ajouter à
             l'écran d'accueil".</p>
     </div>
+    <div id="add" class="alert alert-success" role="alert">
+        <button class="add-button btn btn-outline-success btn-block">Installer cette application web</button>
+    </div>
+
     @include('layout.footer')
 
     <script>
-        // Detects if device is on iOS 
+    // Detects if device is on iOS 
     const isIos = () => {
         const userAgent = window.navigator.userAgent.toLowerCase();
         return /iphone|ipad|ipod/.test(userAgent);
@@ -87,6 +91,37 @@
     if (isIos() && !isInStandaloneMode()) {
         document.getElementById('popup_iOS').style.display = 'flex';
     }
+
+    let deferredPrompt;
+    const addBtn = document.querySelector('.add-button');
+    addBtn.style.display = 'none';
+    document.getElementById('add').style.display = "none";
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        deferredPrompt = e;
+        // Update UI to notify the user they can add to home screen
+        if($('#add').length){
+            addBtn.style.display = 'block';
+            document.getElementById('add').style.display = "block";
+        }
+        addBtn.addEventListener('click', (e) => {
+            // hide our user interface that shows our A2HS button
+            addBtn.style.display = 'none';
+            document.getElementById('add').style.display = "none";
+            // Show the prompt
+            deferredPrompt.prompt();
+            // Wait for the user to respond to the prompt
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome !== 'accepted') {
+                    addBtn.remove();
+                    document.getElementById('add').remove();
+                }
+                deferredPrompt = null;
+            });
+        });
+    });
     </script>
 </body>
 

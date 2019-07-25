@@ -41,9 +41,9 @@ class LoginController extends Controller
     {
         if (Auth::User()->is_admin) {
             return redirect(url('admin/dashboard'));
+        }else{
+            return redirect('/eventList/asc');
         }
-
-        return redirect('/eventList/asc');
     }
 
     public function logout(Request $request)

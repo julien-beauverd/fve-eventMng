@@ -38,6 +38,35 @@
             .col-lg-7 {
                 padding-right: 15px !important;
             }
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 599px) {
+            h2{
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 486px) {
+            h2{
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 436px) {
+            h2{
+                font-size: 1.4rem;
+            }
+            
+        }
+        @media (max-width: 387px) {
+            h2{
+                font-size: 1.2rem;
+            }
+            h5{
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
