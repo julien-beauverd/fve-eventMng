@@ -16,6 +16,16 @@
                 text-align: center;
             }
         }
+        @media (max-width: 445px) {
+            .fc-left{
+                display: inline-block;
+                float: none !important;
+            }
+            .fc-right{
+                display: inline-block;
+                float: none !important;
+            }
+        }
     </style>
 </head>
 

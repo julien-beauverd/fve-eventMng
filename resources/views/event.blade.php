@@ -38,33 +38,37 @@
             .col-lg-7 {
                 padding-right: 15px !important;
             }
+
             h2 {
                 font-size: 2rem;
             }
         }
+
         @media (max-width: 599px) {
-            h2{
+            h2 {
                 font-size: 1.8rem;
             }
         }
 
         @media (max-width: 486px) {
-            h2{
+            h2 {
                 font-size: 1.6rem;
             }
         }
 
         @media (max-width: 436px) {
-            h2{
+            h2 {
                 font-size: 1.4rem;
             }
-            
+
         }
+
         @media (max-width: 387px) {
-            h2{
+            h2 {
                 font-size: 1.2rem;
             }
-            h5{
+
+            h5 {
                 font-size: 0.9rem;
             }
         }
@@ -138,6 +142,9 @@
             @if($OK == 1)
             OK
             @endif
+            @if($OK == 'KO')
+            OK
+            @endif
         </div>
         <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
             aria-labelledby="confirmationModalLabel" aria-hidden="true">
@@ -163,6 +170,54 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="confirmationUnsubModal" tabindex="-1" role="dialog"
+            aria-labelledby="confirmationUnsubModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div id="confirmationModal" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Validation
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Vous êtes maintenant désinscrit de cet événement.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal"
+                            onclick="window.location.href = '{{ url('/event/'.$event[0]->id.'') }}';">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="unsubscribeModal" tabindex="-1" role="dialog"
+            aria-labelledby="unsubscribeModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div id="unsubscribeModal" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Confirmation
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Voulez-vous vous désinscrire de cet événement ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">non</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"
+                            onclick="window.location.href = '{{ url('/participate/' .$event[0]->id.'/true') }}';">Oui</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="wrapper">
             @include('layout.nav-mobile')
             <div id="content-wrapper" class="d-flex flex-column">
@@ -188,8 +243,8 @@
                         <div class="row">
                             <div class="col-lg-6 mt-4">
                                 @if($participate)
-                                <button type="button" class="btn btn-block btn-success btn-md active"
-                                    style="cursor:default;">
+                                <button type="button" class="btn btn-block btn-success btn-md" data-toggle="modal"
+                                    data-target="#unsubscribeModal" style="cursor:default;">
                                     Je participe <i class="fas fa-check"></i>
                                 </button>
                                 @else
@@ -412,9 +467,10 @@
         
         function detectIfparticipateOK() {
         var participate = document.getElementById('participateOK');
-            if (participate.innerHTML.indexOf("OK") !== -1) {
-                console.log("test");
+            if (participate.innerHTML.indexOf("OK") == 25) {
                 $("#confirmationModal").modal();
+            } else if(participate.innerHTML.indexOf("OK") == 37){
+                $("#confirmationUnsubModal").modal();
             }
         }
 </script>

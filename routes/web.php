@@ -44,7 +44,7 @@ Route::get('profile', function () {
 })->middleware('verified');
 Route::put('profile/edit/{id}', 'UserController@update')->middleware('verified');
 Route::get('myEvents/{id}', 'EventController@myEvents')->middleware('verified');
-Route::get('/participate/{id}', 'UserController@participate')->middleware('verified');
+Route::get('/participate/{id}/{unsubscribe?}', 'UserController@participate')->middleware('verified');
 
 //////////////ADMIN////////////////////////////////////////
 Route::get('admin/dashboard', 'AdminController@dashboard')->middleware('verified');

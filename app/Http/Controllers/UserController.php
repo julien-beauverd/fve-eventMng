@@ -64,7 +64,7 @@ class UserController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function participate($id)
+    public function participate($id, $unsubscribe = false)
     {
 
         $event = Event::find($id);
@@ -83,17 +83,27 @@ class UserController extends Controller
             $validator = User::getValidation($user, false);
             if (!$validator->fails()) {
                 $user = User::find(Auth::User()->id);
-                $event->users()->save($user);
-                $validator->getMessageBag()->add('email', 'le compte a correctement été mis à jour.');
-                $messages = $validator->messages();
+                if($unsubscribe)
+                {
+                    $event->users()->wherePivot('user_id','=',$user->id)->detach();
+                }else{
+                    $event->users()->save($user);
+                }
+                
                 DB::commit();
-                return redirect()->action(
-                    'EventController@show',
-                    ['id' => $id, 'OK' => 1]
-                );
+                if($unsubscribe){
+                    return redirect()->action(
+                        'EventController@show',
+                        ['id' => $id, 'OK' => 'KO']
+                    );
+                }else{
+                    return redirect()->action(
+                        'EventController@show',
+                        ['id' => $id, 'OK' => 1]
+                    );
+                }
+                
             } else {
-                $validator->getMessageBag()->add('email', "le compte n'a pas pu être mis à jour.");
-                $messages = $validator->messages();
                 return redirect()->action(
                     'EventController@show',
                     ['id' => $id]
