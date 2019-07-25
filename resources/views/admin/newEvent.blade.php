@@ -3,6 +3,7 @@
 
 <head>
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
     @include('layout.head')
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/newEvent.js') }}"></script>

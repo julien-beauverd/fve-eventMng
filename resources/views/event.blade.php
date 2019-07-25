@@ -115,9 +115,13 @@
                     </div>
                     @elseif(Auth::Check() && Auth::User()->email_verified_at == null)
                     <div class="modal-body">
-                        Vous devez valider votre email pour vous inscrire à un événement. Pour cela, cliquez sur le lien
-                        dans l'e-mail de validation que vous avez reçu
-                        dans votre boîte de réception.
+                        <p>Vous devez valider votre email pour vous inscrire à un événement. Pour cela, cliquez sur le
+                            lien
+                            dans l'e-mail de validation que vous avez reçu
+                            dans votre boîte de réception.</p>
+                        <a class="mt-3" href="{{ url('/email/resend')}}">Cliquer
+                            ici pour
+                            envoyer un nouveau lien de validation.</a>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
@@ -288,11 +292,10 @@
                                     <div class="col-9 pt-2">
                                         <a href=" http://maps.google.com/?q={{ $event[0]->location->street}} {{ $event[0]->location->street_number}} {{ $event[0]->location->city}} {{ $event[0]->location->zip_code}}"
                                             style="color:#212529" data-toggle="tooltip" data-placement="left"
-                                            title="Ouvrir dans Google maps">
+                                            title="Ouvrir dans Google maps" target="_blank">
                                             <h5>
                                                 {{ $event[0]->location->street}}
                                                 {{ $event[0]->location->street_number}}
-
                                             </h5>
                                             <h5>
                                                 {{ $event[0]->location->building}}

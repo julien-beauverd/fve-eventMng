@@ -65,14 +65,14 @@
             </div>
         </header>
     </div>
-    <div id="popup_iOS" class="alert alert-success" role="alert" style="display:none;">
+    <div id="popup_iOS" class="alert alert-success" role="alert" style="display:none;margin-left:10%;margin-right:10%;">
         <p>Vous pouvez installer cette application web sur votre iPhone. Cliquez sur <img class="img-fluid ml-2 mr-2"
                 src="{{URL::asset('/img/share_button_ios.png')}}" alt="bouton partage iOS">
-            et ensuite sur
+            puis sur
             "Ajouter à
             l'écran d'accueil".</p>
     </div>
-    <div id="add" class="alert alert-success" role="alert">
+    <div id="add" class="alert alert-success pl-5 pr-5" style="margin-left:20%;margin-right:20%;" role="alert">
         <button class="add-button btn btn-outline-success btn-block">Installer cette application web</button>
     </div>
 
@@ -102,7 +102,7 @@
         // Stash the event so it can be triggered later.
         deferredPrompt = e;
         // Update UI to notify the user they can add to home screen
-        if($('#add').length){
+        if($('#add').length && document.getElementById('popup_iOS').style.display != 'flex'){
             addBtn.style.display = 'block';
             document.getElementById('add').style.display = "block";
         }
