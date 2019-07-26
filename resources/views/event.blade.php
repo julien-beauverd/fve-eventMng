@@ -112,7 +112,7 @@
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <div id="modalToHide" class="modal-content">
+                <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">
                             @if(Auth::Check())
@@ -174,7 +174,7 @@
         <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
             aria-labelledby="confirmationModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <div id="confirmationModal" class="modal-content">
+                <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="confirmationModalLabel">
                             Validation
@@ -199,7 +199,7 @@
         <div class="modal fade" id="confirmationUnsubModal" tabindex="-1" role="dialog"
             aria-labelledby="confirmationUnsubModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <div id="confirmationModal" class="modal-content">
+                <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="confirmationUnsubModalLabel">
                             Validation
@@ -222,7 +222,7 @@
         <div class="modal fade" id="unsubscribeModal" tabindex="-1" role="dialog"
             aria-labelledby="unsubscribeModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <div id="unsubscribeModal" class="modal-content">
+                <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="unsubscribeModalLabel">
                             Confirmation
