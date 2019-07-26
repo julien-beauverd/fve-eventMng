@@ -40,7 +40,7 @@
       <div id="content">
 
         @include('layout.nav-responsive')
-        <img class="img-fluid" src="{{URL::asset('/img/banner-about.png')}}" alt="banner" width="100%">
+        <img class="img-fluid" src="{{URL::asset('/img/banner-about.jpg')}}" alt="banner" width="100%">
         <div class="container-fluid">
           <div class="row ml-5 mr-5 mt-5">
             <div class="col-lg-6 pr-3 pl-5 text-left">
@@ -104,7 +104,7 @@
               </p>
             </div>
             <div id="imgBatiment" class="col-lg-6 pr-5" style="padding-left:18px!important;">
-              <img class="img-fluid" src="{{URL::asset('/img/batiment-fve.png')}}" alt="batiment fve" width="80%">
+              <img class="img-fluid" src="{{URL::asset('/img/batiment-fve.jpg')}}" alt="batiment de la fve" width="80%">
             </div>
           </div>
           <div class="row text-center p-5 mt-5" style="background-color:#009932;color:white">

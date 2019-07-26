@@ -4,7 +4,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center p-0" style="background-color:white;">
-        <img id="logo" src="{{URL::asset('/img/logo-2.png')}}" width="100%" style="display: none;">
+        <img id="logo" src="{{URL::asset('/img/logo-2.png')}}" width="100%" style="display: none;" alt="logo événements de la fve">
     </a>
 
     @if(Auth::check() && Auth::User()->email_verified_at != null && Auth::User()->is_admin)

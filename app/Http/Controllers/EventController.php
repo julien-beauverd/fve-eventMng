@@ -72,7 +72,8 @@ class EventController extends Controller
         $calendar = Calendar::addEvents($events)->setOptions([
             'lang' => 'fr',
             'contentHeight' => 450,
-            'minTime' => '08:00:00'
+            'minTime' => '08:00:00',
+            
         ]);
         return view('eventCal', compact('calendar'));
     }

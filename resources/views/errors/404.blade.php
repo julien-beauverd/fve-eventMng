@@ -15,8 +15,8 @@
                 </div>
                 <div class="col-6">
                     <div class="row" style="padding-top:120px;">
-                        <div class="col-md-12 text-center">
-                            <img class="img-fluid" style="min-width:180px;" src="{{URL::asset('/img/logo.png')}}"
+                        <div class="col-md-12 text-center" style="padding-left:0px;padding-right:0px;">
+                            <img class="img-fluid" style="min-width:220px;margin-top:20px;" src="{{URL::asset('/img/logo.png')}}"
                                 alt="logo">
                         </div>
                     </div>

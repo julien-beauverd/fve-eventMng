@@ -38,7 +38,7 @@
 
             <div id="content">
                 @include('layout.nav-responsive')
-                <img class="img-fluid" src="{{URL::asset('/img/calendar.png')}}" alt="calendar" width="100%">
+                <img class="img-fluid" src="{{URL::asset('/img/calendar.jpg')}}" alt="calendar" width="100%">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12" style="padding-left:10%;padding-right:10%;margin-bottom:20px;">
+                                <div class="col-md-12" style="padding-left:5%;padding-right:5%;margin-bottom:20px;">
                                     {!! $calendar->calendar() !!}
                                 </div>
                             </div>

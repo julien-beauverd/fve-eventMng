@@ -2,11 +2,19 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-
   <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
   @include('layout.head')
   <script src="{{URL::asset('/js/scripts.js')}}"></script>
+
+
   <style>
+    @media (max-width: 1367px) {
+      .col-lg-4 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+    }
+
     @media (max-width: 1300px) {
       .pointer h4 {
         font-size: 1.2rem;
@@ -66,7 +74,7 @@
       h5,
       .col-sm-8 {
         text-align: center;
-        
+
       }
 
       .pointer h4 {
@@ -84,7 +92,6 @@
       a.text-dark {
         padding-right: 5px !important;
       }
-
       .pointer h4 {
         font-size: 1.3rem;
 
@@ -136,7 +143,7 @@
 
       <div id="content">
         @include('layout.nav-responsive')
-        <img class="img-fluid" src="{{URL::asset('/img/banner.png')}}" alt="banner" width="100%">
+        <img class="img-fluid" src="{{URL::asset('/img/banner.jpg')}}" alt="banner" width="100%">
         <div class="container-fluid" style="margin-bottom:100px">
           <div class="row">
             <div class="col-md-12">
@@ -187,7 +194,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <img class="img-fluid pr-2 ml-1" src="{{URL::asset('/img/events/'.$event->image.'')}}"
-                        alt="img event">
+                        alt="{{ $event->name }}">
                     </div>
                   </div>
                   <div class="row mr-1 ml-1 pr-0 pl-0 pt-2" style="background-color:{{$backgroundColor}};">
@@ -233,7 +240,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <img class="img-fluid pr-2 ml-1" src="{{URL::asset('/img/events/'.$event->image.'')}}"
-                        alt="img event">
+                        alt="{{ $event->name }}">
                     </div>
                   </div>
                   <div class="row mr-1 ml-1 pr-0 pl-0 pt-2" style="background-color:{{$backgroundColor}};">
@@ -242,7 +249,7 @@
                         {{ $event->name }}
                       </h4>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 pl-1 pr-1">
                       <h5 class="text-white">
                         <?php setlocale (LC_ALL, "fr_FR") ?>
                         {{strftime("%e %B %Y",strtotime($event->date))}}

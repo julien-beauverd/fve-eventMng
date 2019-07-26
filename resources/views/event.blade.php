@@ -6,6 +6,11 @@
     @include('layout.head')
     <script src="{{ asset('js/scripts.js') }}"></script>
     <style>
+        @media (max-width: 1920px) {
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
         @media (max-width: 1100px) {
             h2 {
                 font-size: 1.8rem;
@@ -14,9 +19,23 @@
 
         @media (max-width: 992px) {
 
-            h2,
+            .event{
+                width: 90%;
+            }
+            .btn{
+                font-size: 1.1rem;
+            }
+            h5{
+                font-size: 1.3rem;
+            }
+
+            h2{
+                font-size: 2.2rem;
+                text-align: center;
+            }
             h4 {
                 text-align: center;
+                font-size: 2rem;
             }
 
             h5 {
@@ -38,34 +57,36 @@
             .col-lg-7 {
                 padding-right: 15px !important;
             }
-
-            h2 {
-                font-size: 2rem;
-            }
         }
 
         @media (max-width: 599px) {
             h2 {
-                font-size: 1.8rem;
+                font-size: 1.9rem;
             }
         }
 
         @media (max-width: 486px) {
             h2 {
-                font-size: 1.6rem;
+                font-size: 1.7rem;
+            }
+            h4{
+                font-size: 1.4rem;
+            }
+            .btn{
+                font-size: 0.9rem;
             }
         }
 
         @media (max-width: 436px) {
             h2 {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
             }
 
         }
 
         @media (max-width: 387px) {
             h2 {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
 
             h5 {

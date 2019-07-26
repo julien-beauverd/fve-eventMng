@@ -3,7 +3,7 @@
     <div class="col-1 pr-0" style="min-width:30px;">
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3" aria-label="switch-menu"
             style="margin-right:0 !important;padding:0 !important;">
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars fa-2x"></i>
         </button>
     </div>
     <div class="col-11 pl-0">
