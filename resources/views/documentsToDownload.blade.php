@@ -16,7 +16,7 @@
             @include('layout.nav')
             <div id="content">
                 @include('layout.nav-responsive')
-                <img class="img-fluid" src="{{URL::asset('/img/banner.png')}}" alt="banner" width="100%">
+                <img class="img-fluid" src="{{URL::asset('/img/docs_to_download.png')}}" alt="banner" width="100%">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 pt-5">

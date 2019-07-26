@@ -379,7 +379,7 @@
             <div class="col-6">
                 <div class="row pt-5">
                     <div class="col-md-12 text-center">
-                        <img class="img-fluid" style="min-width:180px;margin-top:20px;" src="{{URL::asset('/img/logo.png')}}"
+                        <img class="img-fluid" style="min-width:180px;margin-top:100px;" src="{{URL::asset('/img/logo.png')}}"
                             alt="logo">
                     </div>
                 </div>

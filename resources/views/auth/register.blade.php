@@ -145,10 +145,10 @@
                                                     Créer un compte
                                                 </button>
                                             </div>
-                                            <div class="text-white mt-2">
+                                            <div class="text-white mt-2" style="padding-top:60px">
                                                 <p class="mb-0" style="font-size:15px;">Le mot de passe doit respecter les critères
                                                     suivants:</p>
-                                                <ul style="padding-left:18px;font-size:15px;">
+                                                <ul style="padding-left:18px;font-size:15px;margin-bottom:0px!important;">
                                                     <li>minimum 8 caractères</li>
                                                     <li>minimum 1 chiffre</li>
                                                     <li>minimum 1 minuscule</li>
