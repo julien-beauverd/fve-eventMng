@@ -176,7 +176,7 @@
             <div class="modal-dialog" role="document">
                 <div id="confirmationModal" class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
+                        <h5 class="modal-title" id="confirmationModalLabel">
                             Validation
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -201,7 +201,7 @@
             <div class="modal-dialog" role="document">
                 <div id="confirmationModal" class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
+                        <h5 class="modal-title" id="confirmationUnsubModalLabel">
                             Validation
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -224,7 +224,7 @@
             <div class="modal-dialog" role="document">
                 <div id="unsubscribeModal" class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
+                        <h5 class="modal-title" id="unsubscribeModalLabel">
                             Confirmation
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

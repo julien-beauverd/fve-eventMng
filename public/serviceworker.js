@@ -14,7 +14,25 @@ var filesToCache = [
     '/img/exclamation-droite.png',
     '/img/fleche-verte.png',
     '/img/logo.png',
-    '/img/exclamation-gauche.png'
+    '/img/exclamation-gauche.png',
+    '/bootstrap-4.3.1-dist/css/bootstrap.min.css',
+    '/bootstrap-4.3.1-dist/js/bootstrap.min.js',
+    '/',
+    '/about',
+    '/img/batiment-fve.jpg',
+    '/img/banner-about.jpg',
+    '/img/chantier.jpg',
+    '/img/fve-logo.png',
+    '/usefulLinks',
+    '/img/usefulLinks.png',
+    '/documentsToDownload',
+    '/img/docs_to_download.jpg',
+    '/eventList/asc',
+    '/img/banner.jpg',
+    '/register',
+    '/img/register.png',
+    '/login',
+    '/img/connexion.jpg'
 ];
 
 // Cache on install

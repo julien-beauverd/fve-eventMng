@@ -12,6 +12,7 @@
       #imgBatiment {
         order: 0;
         padding-bottom: 20px;
+        padding-left: 0px !important;
       }
 
       #contentText {
@@ -103,7 +104,7 @@
                 plus de 2’000 personnes pour la formation continue.
               </p>
             </div>
-            <div id="imgBatiment" class="col-lg-6 pr-5" style="padding-left:18px!important;">
+            <div id="imgBatiment" class="col-lg-6 pr-5" style="padding-left:18px;">
               <img class="img-fluid" src="{{URL::asset('/img/batiment-fve.jpg')}}" alt="batiment de la fve" width="80%">
             </div>
           </div>
