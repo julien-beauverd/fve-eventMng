@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    //open the popover if the user click on the button
     $("html").on("mouseup", function (e) {
         var l = $(e.target);
         if (l[0].className != 'btn btn-success btn-circle p-1') {
@@ -22,6 +23,7 @@ window.onload = function () {
     createPopover();
 };
 
+//create popover
 function createPopover() {
     var select = document.getElementById('parent');
     var count = 1;

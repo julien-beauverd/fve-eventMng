@@ -11,6 +11,7 @@ window.onload = function () {
 
 $(document).ready(function () {
 
+    //detect if the password is OK
     $("#password").on("change keyup paste", function () {
 
         if (this.value.match(/[a-z]/g) &&
@@ -27,6 +28,7 @@ $(document).ready(function () {
         }
     })
 
+    //detect if the password confirmation is OK
     $("#password_confirm").on("change keyup paste", function () {
 
         if (this.value.match(/[a-z]/g) &&

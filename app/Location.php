@@ -28,7 +28,7 @@ class Location extends Model
 
     protected $errors;
 
-    // Définition des règles de validation
+    //rules for the validation
     public static $rules = [
         'city' => 'required|string|regex:/^((?!script).)*$/i',
         'street' => 'required|string|regex:/^((?!script).)*$/i',
@@ -37,6 +37,12 @@ class Location extends Model
         'building' => 'nullable|string|regex:/^((?!script).)*$/i'
     ];
 
+    /**
+     * validate the model before creating it
+     * @param Array $inputs
+     * @param boolean $updated
+     * @return Validator $validator
+     */
     public static function getValidation(array $inputs, bool $updated = true)
     {
         $validator = Validator::make($inputs, static::$rules);

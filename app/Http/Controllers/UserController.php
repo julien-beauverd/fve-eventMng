@@ -17,7 +17,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int $id
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function update(Request $request, $id)
     {
         $newUser['name'] = $request->name;
@@ -113,19 +113,5 @@ class UserController extends Controller
             DB::rollback();
             return response()->json(['error', $e->getMessage()]);
         }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $user = User::find($id);
-        $user->delete();
-
-        return $user;
     }
 }

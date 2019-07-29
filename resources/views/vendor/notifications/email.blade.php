@@ -1,3 +1,5 @@
+<!-- the template that is used to send reset and verify mail -->
+
 @component('mail::message')
 {{-- Greeting --}}
 @if (! empty($greeting))

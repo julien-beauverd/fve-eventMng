@@ -15,7 +15,7 @@
 <link rel="manifest" crossorigin="use-credentials" href="{{URL::asset('/manifest.json')}}">
 <!-- Chrome for Android theme color -->
 <meta name="theme-color" content="#000000">
-    
+
 <!-- Add to homescreen for Chrome on Android -->
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="application-name" content="événements!">
@@ -26,6 +26,7 @@
 <meta name="apple-mobile-web-app-title" content="PWA">
 <link rel="apple-touch-icon" href="{{URL::asset('/img/PWA/icon-512x512.png')}}">
 
+<!-- the image for the PWA launch. each size of devices -->
 <link href="{{URL::asset('/img/PWA/splash-640x1136.png')}}"
     media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
     rel="apple-touch-startup-image" />
@@ -70,12 +71,13 @@
             // Registration was successful
             console.log('Laravel PWA: ServiceWorker registration successful with scope: ', registration.scope);
         }, function (err) {
-            // registration failed :(
+            // registration failed
             console.log('Laravel PWA: ServiceWorker registration failed: ', err);
         });
     }
 </script>
 
+<!-- the Bootstrap CDN -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -91,7 +93,9 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
 
+<!-- the footawesome link to add icons -->
 <script src="https://kit.fontawesome.com/4044113f4e.js"></script>
 
 
+<!-- custom CSS -->
 <link href="{{ asset('css/custom.css') }}" rel="stylesheet">

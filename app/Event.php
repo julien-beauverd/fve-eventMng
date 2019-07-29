@@ -30,7 +30,7 @@ class Event extends Model
 
     protected $errors;
 
-    // Définition des règles de validation
+    //reules for the validation
     public static $rules = [
         'location_id' => 'exists:locations,id|nullable',
         'type' => 'required|in:"grand-rdv","rdv-juridique","rdv-formation","rencontres-entrepreneurs"',
@@ -40,6 +40,11 @@ class Event extends Model
         'date' => 'required|date|after:today',
     ];
 
+    /**
+     * validate the model before creating it
+     * @param Array $inputs
+     * @return Validator $validator
+     */
     public static function getValidation(array $inputs, bool $updated = true)
     {
         $validator = Validator::make($inputs, static::$rules);

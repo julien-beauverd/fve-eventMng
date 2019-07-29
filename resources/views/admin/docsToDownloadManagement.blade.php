@@ -9,6 +9,8 @@
 </head>
 
 <body id="page-top" class="sidebar-toggled">
+
+    <!-- pop-up to explain that the file is too large -->
     <div class="modal fade" id="ModalDocument" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -31,7 +33,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- pop-up to confirm that the list is updated -->
     <div class="modal fade" id="Modaldocs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -59,8 +61,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 @include('admin.layout.nav-responsive')
-
-
+                <!-- detect if the return of the view contains OK to show the pop-up -->
                 <div id="docsOK" style="display:none;">
                     @error('OK') {{ $message }}@enderror
                 </div>
@@ -89,7 +90,6 @@
                     @foreach($docsToDownload as $docToDownload)
                     <div class="row">
                         <div class="col-md-3">
-
                             <a id="doc-{{$loop->iteration}}"
                                 href="{{URL::asset('/docs/download/'.$docToDownload->name.'')}}" download>
                                 {{$docToDownload->name}}
@@ -107,7 +107,6 @@
                                     name="title_document_{{$loop->iteration}}" placeholder="titre du document" required
                                     autocomplete="title_document" autofocus
                                     value="{{old('title_document_'.$loop->iteration.'') ?? $docToDownload->title}}">
-
                                 @error('title_document')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -126,7 +125,6 @@
                                     placeholder="description du document" required autocomplete="description_document"
                                     autofocus
                                     value="{{old('description_document_'.$loop->iteration.'') ?? $docToDownload->description}}">
-
                                 @error('description_document')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -134,6 +132,7 @@
                                 @enderror
                             </div>
                         </div>
+                        <!-- button that can delete the document to download -->
                         <div class="col-md-1">
                             <a id="{{$loop->iteration}}" class="btn-doc btn btn-danger btn-circle btn-sm p-1"
                                 style="border-radius:100%;background-color:#e74a3b;">
@@ -148,7 +147,6 @@
                     </div>
                     <div class="row" style="padding-top:40px;">
                         <div class="col-md-3">
-
                         </div>
                         <div class="col-md-3">
                             <button id="addDocument" type="button" class="btn btn-outline-success btn-md">
@@ -164,6 +162,7 @@
                         </div>
                     </div>
                     {{ Form::close() }}
+                    <!-- the template of a new document input -->
                     <div id="documentTemplate" class="row" style="display:none">
                         <div class="col-md-3">
                             <div class="input-group form-group">
@@ -230,17 +229,3 @@
 </body>
 
 </html>
-<script>
-    $('.counter-count').each(function () {                 
-        $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
-            },
-            {
-                duration: 2000,
-                easing: 'swing',
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-        });
-    });
-</script>

@@ -28,6 +28,7 @@
             <div id="content">
                 @include('admin.layout.nav-responsive')
 
+                <!-- pop-up to explain that the image is too large -->
                 <div class="modal fade" id="ModalImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -50,6 +51,7 @@
                     </div>
                 </div>
 
+                <!-- pop-up to explain that the document is too large -->
                 <div class="modal fade" id="ModalDocument" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -95,6 +97,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- the div contains OK if the modified event is done -->
                 <div id="eventOK" style="display:none;">
                     @error('OK') {{ $message }}@enderror
                 </div>

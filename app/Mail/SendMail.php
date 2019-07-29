@@ -12,8 +12,13 @@ class SendMail extends Mailable
     use Queueable, SerializesModels;
 
     /**
-     * Create a new message instance.
-     *
+     * create the mail
+     * @param String $eventName
+     * @param String $mailType
+     * @param String $title
+     * @param String $subject
+     * @param String $message
+     * @param String $link
      * @return void
      */
     public function __construct(String $eventName, String $subject, String $message, String $link, String $mailType, String $title)
@@ -27,9 +32,9 @@ class SendMail extends Mailable
     }
 
     /**
-     * Build the message.
-     *
-     * @return $this
+     * build the mail
+     * test if the mail is specific or for all the members
+     * @return Mail $this 
      */
     public function build()
     {

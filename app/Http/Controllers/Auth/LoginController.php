@@ -37,6 +37,14 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    /**
+     * Override the authenticated function 
+     * if the user is admin, redirect to the admin dashboard
+     * if the user is a standard user, redirect to the home page
+     * @param Request $request
+     * @param User $user
+     * @return View view
+     */
     protected function authenticated(Request $request, $user)
     {
         if (Auth::User()->is_admin) {
@@ -46,6 +54,12 @@ class LoginController extends Controller
         }
     }
 
+    /**
+     * Override the logout function to redirect if the user want to change its password
+     * if the user come from the profile page, redirect to password/reset
+     * @param Request $request 
+     * @return View view of the home page
+     */
     public function logout(Request $request)
     {
         $this->performLogout($request);

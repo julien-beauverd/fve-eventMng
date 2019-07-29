@@ -43,7 +43,7 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
 
     protected $errors;
 
-    // Définition des règles de validation
+    //rules of the validation
     public static $rules = [
         'email' => "required|email|regex:/^((?!script).)*$/i",
         'name' => "required|string|regex:/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/i|regex:/^((?!script).)*$/i",
@@ -58,6 +58,11 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
         return $this->belongsToMany('App\Event', 'user_event');
     }
 
+    /**
+     * validate the model before creating it
+     * @param Array $inputs
+     * @return Validator $validator
+     */
     public static function getValidation(array $inputs, bool $updated = true)
     {
         $validator = Validator::make($inputs, static::$rules);

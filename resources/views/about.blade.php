@@ -32,14 +32,11 @@
 </head>
 
 <body id="page-top" class="sidebar-toggled">
-
   <div id="wrapper">
     @include('layout.nav-mobile')
     <div id="content-wrapper" class="d-flex flex-column">
       @include('layout.nav')
-
       <div id="content">
-
         @include('layout.nav-responsive')
         <img class="img-fluid" src="{{URL::asset('/img/banner-about.jpg')}}" alt="banner" width="100%">
         <div class="container-fluid">

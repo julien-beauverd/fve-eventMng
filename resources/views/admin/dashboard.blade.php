@@ -73,6 +73,7 @@
                                     <i class="fas fa-users fa-4x" style="display:inline;"></i>
                                 </div>
                             </div>
+                            <!-- The next event -->
                             <div class="row">
                                 @if($event == '')
                                 @else
@@ -162,6 +163,7 @@
                                                 {{$user->email}}
                                             </td>
                                             <td>
+                                                <!--button that can delete the user-->
                                                 <a id="{{$user->id}}" data-toggle="modal"
                                                     data-target="#ModalUserDel-{{$user->id}}"
                                                     class="btn-doc btn btn-danger btn-circle btn-sm p-1"
@@ -187,6 +189,7 @@
                                                 {{$user->email}}
                                             </td>
                                             <td>
+                                                <!--button that can delete the user-->
                                                 <a id="{{$user->id}}" data-toggle="modal"
                                                     data-target="#ModalUserDel-{{$user->id}}"
                                                     class="btn-doc btn btn-danger btn-circle btn-sm p-1"
@@ -202,9 +205,11 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <!-- pagination -->
                             {{ $users->links() }}
                         </div>
                     </div>
+                    <!-- create a pop-up for each user because the button has to be unique-->
                     @foreach($users as $user)
                     <div class="modal fade" id="ModalUserDel-{{$user->id}}" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -251,6 +256,7 @@
 <script>
     $(document).ready(function () {
     
+        //function to animate the text
     $('.counter-count').each(function () {                 
         $(this).prop('Counter', 0).animate({
             Counter: $(this).text()

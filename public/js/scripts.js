@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    //show the menu if the width is more than 992
     if ($(window).width() >= 992) {
         $("body").toggleClass("sidebar-toggled");
         $(".sidebar").toggleClass("toggled");
@@ -52,6 +53,7 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
+    //add a topic if the user click on the button "add topic"
     $(document).on('click', '#addTopic', function (e) {
         var select = document.getElementById('parent');
         if (select.querySelector('#topicCount').value < 35) {
@@ -82,6 +84,7 @@ $(document).ready(function () {
         }
     });
 
+    //delete the last topic
     $(document).on('click', '#removeTopic', function (e) {
         var select = document.getElementById('parent');
         if (select.querySelector('#topicCount').value > 7) {

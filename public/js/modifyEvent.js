@@ -5,6 +5,7 @@ window.onload = function () {
 
 $(document).ready(function () {
 
+    //if the user click to add a banner, it shows the input that was disabled
     $(document).on('click', '#addBanner', function (e) {
         var btnBanner = document.getElementById('inputImg');
         var dimensionBanner = document.getElementById("dimensionImg");
@@ -15,6 +16,7 @@ $(document).ready(function () {
         btnBanner.style.display = '';
         btnBanner.childNodes[3].required = true;
         dimensionBanner.style.display = '';
+        //assign the change bind to detect the size of the file
         $('#image').bind('change', function () {
 
             if (this.files.length != 0 && this.files[0].size >= '2097152') {
@@ -28,6 +30,7 @@ $(document).ready(function () {
         });
     });
 
+    //if the user click to add a document, it creates a input from a template and add a unique id
     $(document).on('click', '#addDocument', function (e) {
         var select = document.getElementById('DocumentParent');
         var inputDoc = document.getElementById("documentTemplate");
@@ -54,6 +57,7 @@ $(document).ready(function () {
         });
     });
 
+    //if the user click to delete the doc, the value of the input switch to 1
     $(document).on('click', '.btn-doc', function (e) {
         var idDocToDelete = 'delDoc_' + e.target.id;
         e.target.parentNode.style.display = 'none';
@@ -61,6 +65,7 @@ $(document).ready(function () {
         inputDocToDelete.value = 1;
     });
 
+    //test if the time input is sorted by time 
     $("#time_topic_2").on("change keyup paste", function () {
 
         if (this.value > document.getElementById('time_topic_1').value) {
@@ -230,6 +235,7 @@ $(document).ready(function () {
         }
     })
 
+    //test if the zip code is OK
     $("#zip_code").on("change keyup paste", function () {
 
         if (this.value.length == 4) {
@@ -245,6 +251,7 @@ $(document).ready(function () {
         }
     })
 
+    //test if the date is on the future
     $("#date").on("change keyup paste", function () {
 
         console.log(this.style.color)
@@ -264,6 +271,7 @@ $(document).ready(function () {
     })
 });
 
+//create the program if the event has already topics
 function createProgram() {
     var topicCount = document.getElementById('topicCount');
     var topicNumber = document.getElementById('topicNumber');

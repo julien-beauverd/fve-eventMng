@@ -1,7 +1,7 @@
-<!-- Topbar -->
+<!-- navbar that are loaded when the user is on mobile-->
 <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
     <div class="col-1 pr-0" style="min-width:50px;">
-        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle"
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle" aria-label="switch-menu"
             style="margin-right:0 !important;padding:0 !important;">
             <i class="fa fa-bars fa-2x"></i>
         </button>

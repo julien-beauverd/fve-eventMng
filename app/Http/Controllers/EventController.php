@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\DB;
 class EventController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Display the list of the events order by asc or desc
+     * @param String $orderBy that has 'asc' or 'desc'
+     * @return view eventList with all the informations
      */
     public function index($orderBy)
     {
@@ -30,9 +30,9 @@ class EventController extends Controller
     }
 
     /**
-     * Display a listing of the resource for calendar.
+     * Display the calendar with all the events inside.
      *
-     * @return \Illuminate\Http\Response
+     * @return View the calendar
      */
     public function calendar()
     {
@@ -42,7 +42,10 @@ class EventController extends Controller
             foreach ($data as $key => $event) {
                 $start = new \DateTime($event->date . " " . $event->topics[0]->time);
                 $end = new \DateTime($event->date . " " . $event->topics[count($event->topics) - 1]->time);
+                
+                //assign the color of the event according to its type
                 switch ($event->type) {
+
                     case 'grand-rdv':
                         $color = '#962404';
                         break;
@@ -57,6 +60,8 @@ class EventController extends Controller
                         break;
                 }
                 $events[] = Calendar::event(
+
+                    //assign the name, the start and the end with the topics
                     $event->name,
                     false,
                     $start->format(\DateTime::ATOM),
@@ -69,6 +74,8 @@ class EventController extends Controller
                 );
             }
         }
+
+        //modify the height, the minimum time and the langage
         $calendar = Calendar::addEvents($events)->setOptions([
             'lang' => 'fr',
             'contentHeight' => 450,
@@ -78,6 +85,10 @@ class EventController extends Controller
         return view('eventCal', compact('calendar'));
     }
 
+    /**
+     * show the documentsToDownload page with all the informations
+     * @return View documentsToDownload
+     */
     public function documentsToDownload()
     {
 
@@ -88,12 +99,13 @@ class EventController extends Controller
 
 
     /**
-     * Display a listing of the resource for calendar.
-     *
-     * @return \Illuminate\Http\Response
+     * show the page myEvents with the events of the user
+     * @param int the id of the user
+     * @return View myEvents
      */
     public function myEvents($id)
     {
+        //tests if the identifier is the same as the user who made the request
         if ($id != Auth::User()->id) {
             $events = null;
             $times = 0;
@@ -116,30 +128,15 @@ class EventController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * show a event with all the informations
+     * @param int id of the event
+     * @param boolean if the user participate or not
+     * @return View of the event
      */
     public function show($id, $OK = null)
     {
         $event = Event::with('location', 'documents', 'users', 'topics')->where('id', '=', $id)->get();
 
         return view('event')->with(['event' => $event, 'OK' => $OK]);
-    }
-
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $event = Event::find($id);
-        $event->delete();
-
-        return $event;
     }
 }

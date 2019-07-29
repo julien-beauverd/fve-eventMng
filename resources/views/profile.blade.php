@@ -84,6 +84,7 @@
                       </span>
                       @enderror
                     </div>
+                    <!-- if the user want to change the password, go to logout and reset password -->
                     <div class="input-group form-group">
                       <a class="btnProfile btn btn-outline-success form-control" href="{{ route('logout') }}"
                         style="border-radius: 4px;"

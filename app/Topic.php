@@ -28,7 +28,7 @@ class Topic extends Model
 
     protected $errors;
 
-    // Définition des règles de validation
+    //rules of the validation
     public static $rules = [
         'event_id' => 'exists:events,id|nullable',
         'time' => 'required|date_format:"H:i:s"',
@@ -37,6 +37,11 @@ class Topic extends Model
         'description' => 'nullable|string|regex:/^((?!script).)*$/i'
     ];
 
+    /**
+     * validate the model before creating it
+     * @param Array $inputs
+     * @return Validator $validator
+     */
     public static function getValidation(Array $inputs)
     {
         $validator = Validator::make($inputs, static::$rules);

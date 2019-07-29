@@ -161,8 +161,10 @@
                 </div>
               </div>
               @foreach ($events as $event)
+              <!-- if this is the first event, create the row -->
               @if($loop->odd)
               <div class="row">
+                <!-- assign the color on the background -->
                 @if($event->type == 'grand-rdv')
                 <?php $backgroundColor = '#962404'?>
                 @elseif($event->type == 'rdv-juridique')
@@ -208,6 +210,7 @@
                   </div>
                 </div>
                 @else
+                <!-- assign the color on the background -->
                 @if($event->type == 'grand-rdv')
                 <?php $backgroundColor = '#962404'?>
                 @elseif($event->type == 'rdv-juridique')
@@ -252,7 +255,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> 
+              <!-- if this is the second event, close the row -->
               @endif
               @endforeach
               @endif

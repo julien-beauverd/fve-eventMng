@@ -3,6 +3,7 @@ window.onload = function () {
     detectIfeventOK();
 };
 
+//create the program if the old inputs exist
 function createProgram() {
     var topicCount = document.getElementById('topicCount');
     var topicNumber = document.getElementById('topicNumber');
@@ -43,6 +44,7 @@ function detectIfeventOK() {
 
 $(document).ready(function () {
 
+    //if the user click to add a document, it creates a input from a template and add a unique id
     $(document).on('click', '#addDocument', function (e) {
         var select = document.getElementById('DocumentParent');
         var inputDoc = document.getElementById("documentTemplate");

@@ -22,8 +22,13 @@ use App\Mail\SendMail;
 class AdminController extends Controller
 {
     /**
-     * Display the dashboard
-     *
+     * display the dashboard for the admin.
+     * show number of created account,
+     *      number of created events,
+     *      number of participants for the next event
+     *      paginated list of all the users
+     * @return View the view dashboard with all the params
+     * 
      */
     public function dashboard()
     {
@@ -45,10 +50,10 @@ class AdminController extends Controller
         }
     }
 
-
     /**
-     * Display the dashboard
-     *
+     * Delete the user
+     * @param int ID of the user that has to be deleted
+     * @return View the dashboard view with all the informations
      */
     public function deleteUser($id)
     {
@@ -73,6 +78,12 @@ class AdminController extends Controller
         }
     }
 
+    /**
+     * test if the mail is for a specific event or for all the members
+     * call the Mail Facade with all the params
+     * @param Request request
+     * @return View the sendmail view with the confirmation that the mail is gone
+     */
     public function sendMail(Request $request)
     {
 
@@ -118,8 +129,8 @@ class AdminController extends Controller
     }
 
     /**
-     * Display the newEvent view
-     *
+     * display the newEventPage
+     * @return View return the view if the user is the admin
      */
     public function showNewEventPage()
     {
@@ -131,8 +142,9 @@ class AdminController extends Controller
     }
 
     /**
-     * Display the newEvent view
-     *
+     * Delete the event
+     * @param int ID of the event that has to be deleted
+     * @return View the nextEvent view
      */
     public function deleteEvent($id)
     {
@@ -191,8 +203,8 @@ class AdminController extends Controller
     }
 
     /**
-     * Display the newEvent view
-     *
+     * show the next events page
+     * @return View the next events view with all the informations
      */
     public function showNextEventsPage()
     {
@@ -250,8 +262,9 @@ class AdminController extends Controller
     }
 
     /**
-     * Display the newEvent view
-     *
+     * show the modify page with the event that the admin has selected
+     * @param int ID of the event that has to be modified
+     * @return View the modify event view with all the informations
      */
     public function showModifyEvent($id)
     {
@@ -271,8 +284,8 @@ class AdminController extends Controller
     }
 
     /**
-     * Display docs to download
-     *
+     * Show the docs to download page
+     * @return View the docstodownload view with all the informations
      */
     public function showDocsToDownload()
     {
@@ -285,6 +298,10 @@ class AdminController extends Controller
         }
     }
 
+    /**
+     * show the send mail page with all the informations
+     * @return View the sendMail view
+     */
     public function showSendMail()
     {
         if (Auth::User()->is_admin == false) {
@@ -296,8 +313,9 @@ class AdminController extends Controller
     }
 
     /**
-     * Modify the list of docs to download
-     *
+     * Modify the list of the docsToDownload
+     * @param Request $request
+     * @return View docToDownload view with all the new informations
      */
     public function modifyDocsToDownload(Request $request)
     {
@@ -311,8 +329,8 @@ class AdminController extends Controller
 
             try {
 
+                //check if any doc has to be deleted
                 if ($request->delDoc_1 == '1') {
-
                     $docToDelete = $docsToDownload[0];
                     File::delete(public_path() . '/docs/download/' . $docToDelete->name . '');
                     Document::destroy($docToDelete->id);
@@ -371,7 +389,8 @@ class AdminController extends Controller
                     File::delete(public_path() . '/docs/download/' . $docToDelete->name . '');
                     Document::destroy($docToDelete->id);
                 }
-
+                
+                //foreach new doc, insert the doc in the database and transfer the doc to public folder
                 $newDocuments = array();
 
                 for ($i = 1; $i <= count($docsToDownload); $i++) {
@@ -453,8 +472,8 @@ class AdminController extends Controller
     }
 
     /**
-     * Display the newEvent view
-     *
+     * show the past events page
+     * @return View with all the informations
      */
     public function showPastEventsPage()
     {
@@ -472,9 +491,9 @@ class AdminController extends Controller
     }
 
     /**
-     * add a new event
-     *
-     *
+     * create the new event
+     * @param Request $request with all the informations about the new event
+     * @return View with the message OK or the error with the inputs
      */
     public function newEvent(Request $request)
     {
@@ -482,6 +501,8 @@ class AdminController extends Controller
         if (Auth::User()->is_admin == false) {
             return view('errors/404');
         } else {
+
+            //store all the informations about the new event
 
             $newImage = $request->image;
 
@@ -498,6 +519,7 @@ class AdminController extends Controller
 
             $newtopics = array();
 
+            //foreach new topic, write inside a array
             for ($i = 1; $i <= $request->topicNumber; $i++) {
                 $time = "time_topic_" . $i;
                 $title = "title_topic_" . $i;
@@ -510,6 +532,8 @@ class AdminController extends Controller
                 $newtopics[] = $newtopic;
             }
 
+            //if the location doesn't exist, create a new
+            //if the location exist, use this one
             $location = Location::where('city', $newLocation['city'])
                 ->where('street', $newLocation['street'])
                 ->where('zip_code', $newLocation['zip_code'])
@@ -535,6 +559,7 @@ class AdminController extends Controller
                 return redirect('admin/newEvent')->withInput()->withErrors($messages);
             }
 
+            //test if all the new topics are sorted by time
             $previousTime = null;
             foreach ($newtopics as $newtopic) {
                 $validator = Topic::getValidation($newtopic);
@@ -553,6 +578,8 @@ class AdminController extends Controller
             }
 
             DB::beginTransaction();
+
+            //if all the tests has passed, begin the creation
 
             try {
 
@@ -609,6 +636,7 @@ class AdminController extends Controller
                     $newImage->getClientOriginalExtension();
                 $storagePath = public_path('img/events/');
 
+                //resize and store the image
                 Image::make($newImage->getRealPath())->resize(2000, 730)->save($storagePath . '/' . $filename, 100);
 
                 if ($request->document_1 != null) {
@@ -667,9 +695,10 @@ class AdminController extends Controller
     }
 
     /**
-     * modify a event
-     *
-     *
+     * modify the event that has the ID in param
+     * @param Request $request
+     * @param int $id the id of the event that has to be modified
+     * @return View with the message OK or the error with all the inputs
      */
     public function modifyEvent(Request $request, $id)
     {
@@ -871,6 +900,9 @@ class AdminController extends Controller
                     }
                 }
 
+                //if there is less topic than before, delete the topics that has to be deleted
+                //if there is the same count, overrride all the topics
+                //if there is more topic than before, create all the new
                 $oldTopics = Topic::where('event_id', $id)->get();
                 if (count($oldTopics) > count($newtopics)) {
                     $i = 0;

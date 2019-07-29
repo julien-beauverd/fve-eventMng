@@ -58,6 +58,7 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <!-- show the calendar -->
                                 <div class="col-md-12" style="padding-left:5%;padding-right:5%;margin-bottom:20px;">
                                     {!! $calendar->calendar() !!}
                                 </div>

@@ -4,6 +4,7 @@ window.onload = function () {
 
 $(document).ready(function () {
 
+    //if the user click to delete the doc, the value of the input switch to 1
     $(document).on('click', '.btn-doc', function (e) {
         var idDocToDelete = 'delDoc_' + e.target.id;
         e.target.parentNode.parentNode.style.display = 'none';
@@ -11,6 +12,7 @@ $(document).ready(function () {
         inputDocToDelete.value = 1;
     });
 
+    //if the user click to add a document, it creates a input from a template and add a unique id
     $(document).on('click', '#addDocument', function (e) {
         var select = document.getElementById('DocumentParent');
         var inputDoc = document.getElementById("documentTemplate");
@@ -41,6 +43,7 @@ $(document).ready(function () {
     });
 });
 
+//if all the modifications are OK, a pop-up appear
 function detectIfdocsOK() {
     var topicCount = document.getElementById('docsOK');
     if (topicCount.innerHTML.indexOf("OK") !== -1) {

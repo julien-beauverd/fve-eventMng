@@ -1,4 +1,6 @@
 var staticCacheName = "pwa-v" + new Date().getTime();
+
+//files that are accessible when the user is offline
 var filesToCache = [
     '/offline',
     '/css/app.css',
@@ -14,20 +16,11 @@ var filesToCache = [
     '/img/exclamation-droite.png',
     '/img/fleche-verte.png',
     '/img/logo.png',
-    '/img/exclamation-gauche.png'
+    '/img/exclamation-gauche.png',
+    '/',
+    '/bootstrap-4.3.1-dist/css/bootstrap.min.css',
+    '/bootstrap-4.3.1-dist/js/bootstrap.min.js',
 ];
-
-// Cache on install
-self.addEventListener("install", event => {
-    this.skipWaiting();
-    event.waitUntil(
-        caches.open(staticCacheName)
-        .then(cache => {
-            return cache.addAll(filesToCache);
-        })
-    )
-});
-
 
 // Clear cache on activate
 self.addEventListener('activate', event => {
@@ -41,6 +34,17 @@ self.addEventListener('activate', event => {
             );
         })
     );
+});
+
+// Cache on install
+self.addEventListener("install", event => {
+    this.skipWaiting();
+    event.waitUntil(
+        caches.open(staticCacheName)
+        .then(cache => {
+            return cache.addAll(filesToCache);
+        })
+    )
 });
 
 // Serve from Cache

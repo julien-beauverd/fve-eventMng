@@ -92,6 +92,7 @@
       a.text-dark {
         padding-right: 5px !important;
       }
+
       .pointer h4 {
         font-size: 1.3rem;
 
@@ -174,12 +175,15 @@
                   </h5>
                 </div>
               </div>
+              <!-- if there is no event -->
               @if(count($events) == 0)
               <h3 class="text-center pt-5">Il n'y a pas d'événement prévu pour le moment.</h3>
               @else
               @foreach ($events as $event)
+              <!-- if this is the first event, open the row -->
               @if($loop->odd)
               <div class="row">
+                <!-- assign the color on the background -->
                 @if($event->type == 'grand-rdv')
                 <?php $backgroundColor = '#962404'?>
                 @elseif($event->type == 'rdv-juridique')
@@ -226,6 +230,7 @@
                   </div>
                 </div>
                 @else
+                <!-- assign the color on the background -->
                 @if($event->type == 'grand-rdv')
                 <?php $backgroundColor = '#962404'?>
                 @elseif($event->type == 'rdv-juridique')
@@ -272,6 +277,7 @@
                   </div>
                 </div>
               </div>
+              <!-- close the row if this is the second event -->
               @endif
               @endforeach
               @endif

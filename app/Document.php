@@ -25,7 +25,7 @@ class Document extends Model
 
     protected $errors;
 
-    // Définition des règles de validation
+    //rules for validation
     public static $rules = [
         'name' => "required|string|regex:/^((?!script).)*$/i",
         'doc_to_download' => 'nullable|boolean',
@@ -34,6 +34,11 @@ class Document extends Model
         
     ];
 
+    /**
+     * validate the model before creating it
+     * @param Array $inputs
+     * @return Validator $validator
+     */
     public static function getValidation(Array $inputs)
     {
         $validator = Validator::make($inputs, static::$rules);

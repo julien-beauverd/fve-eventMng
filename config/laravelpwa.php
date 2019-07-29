@@ -1,5 +1,6 @@
 <?php
 
+//declare the manifest.json
 return [
     'name' => 'événements!',
     'manifest' => [

@@ -76,7 +76,11 @@ class RegisterController extends Controller
         ]);
     }
 
-    //override method register to stop login after create account
+    /**
+     * //override register function to stop login right after creating a account
+     * @param Request $request
+     * @return View the view redirectTo
+     */
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();

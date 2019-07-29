@@ -1,3 +1,5 @@
+<!-- the mail template that is used to send mail to every members -->
+
 @component('mail::message')
 # {{ $title }}
 

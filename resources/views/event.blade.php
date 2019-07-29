@@ -11,6 +11,7 @@
                 font-size: 2.2rem;
             }
         }
+
         @media (max-width: 1100px) {
             h2 {
                 font-size: 1.8rem;
@@ -19,20 +20,23 @@
 
         @media (max-width: 992px) {
 
-            .event{
+            .event {
                 width: 90%;
             }
-            .btn{
+
+            .btn {
                 font-size: 1.1rem;
             }
-            h5{
+
+            h5 {
                 font-size: 1.3rem;
             }
 
-            h2{
+            h2 {
                 font-size: 2.2rem;
                 text-align: center;
             }
+
             h4 {
                 text-align: center;
                 font-size: 2rem;
@@ -69,10 +73,12 @@
             h2 {
                 font-size: 1.7rem;
             }
-            h4{
+
+            h4 {
                 font-size: 1.4rem;
             }
-            .btn{
+
+            .btn {
                 font-size: 0.9rem;
             }
         }
@@ -98,6 +104,7 @@
 
 <body id="page-top" class="sidebar-toggled" style="background-color: lightgray;">
 
+    <!-- detect if the user is a participant -->
     <?php $participate = false ?>
     @if(Auth::check())
     @foreach($event[0]->users as $user)
@@ -162,7 +169,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- write OK if the user is a participant -->
         <div id="participateOK" style="display:none;">
             @if($OK == 1)
             OK
@@ -311,6 +318,7 @@
                                         <i class="fas fa-map-marker-alt text-success fa-2x"></i>
                                     </div>
                                     <div class="col-9 pt-2">
+                                        <!-- Open google maps with the address -->
                                         <a href=" http://maps.google.com/?q={{ $event[0]->location->street}} {{ $event[0]->location->street_number}} {{ $event[0]->location->city}} {{ $event[0]->location->zip_code}}"
                                             style="color:#212529" data-toggle="tooltip" data-placement="left"
                                             title="Ouvrir dans Google maps" target="_blank">
@@ -346,7 +354,8 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                @if($participate == true || $old == true)
+                                @if($participate == true)
+                                <!-- the button that create a ICS file -->
                                 <div class="row mt-4">
                                     <div class="col-lg-3">
                                     </div>
@@ -408,6 +417,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- if the user is a participant or if the event has passed, show the informations -->
                         @if($participate == true || $old == true)
                         <div class="row">
                             <div class="col-lg-4 pt-5">
