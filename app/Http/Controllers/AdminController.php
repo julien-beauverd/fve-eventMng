@@ -146,11 +146,11 @@ class AdminController extends Controller
             $events = Event::with('location', 'topics')->where('date', '>=', date('Y-m-d'))->orderBy('date', 'asc')->get();
 
             $usersArray = array();
-
             if (count($events) == 0) {
+                
                 return view('admin/nextEvents')->with(
                     [
-                        'events' => '',
+                        'events' => $events,
                         'nameArray' => '',
                         'firstNameArray' => '',
                         'companyNameArray' => '',
@@ -205,10 +205,11 @@ class AdminController extends Controller
 
             $usersArray = array();
 
+            
             if (count($events) == 0) {
                 return view('admin/nextEvents')->with(
                     [
-                        'events' => '',
+                        'events' => $events,
                         'nameArray' => '',
                         'firstNameArray' => '',
                         'companyNameArray' => '',

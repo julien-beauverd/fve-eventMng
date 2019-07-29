@@ -13,6 +13,10 @@
             .col-md-4 {
                 text-align: center;
             }
+
+             #parent .row .col-md-2:first-child{
+                padding-top: 25px;
+            }            
         }
     </style>
 </head>

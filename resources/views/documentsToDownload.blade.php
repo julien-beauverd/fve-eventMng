@@ -32,9 +32,9 @@
                         @endif
                         <div class="col-lg-4 d-flex ">
                             <div class="jumbotron card card-block docToDownload">
-                                <h2>
+                                <h3>
                                     {{$docToDownload->title}}
-                                </h2>
+                                </h3>
                                 <p class="text-justify">
                                     {{$docToDownload->description}}
                                 </p>

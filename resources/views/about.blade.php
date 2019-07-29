@@ -24,7 +24,7 @@
         padding: 0 0 20px 0 !important;
       }
 
-      #logo {
+      #logo-fve {
         padding: 0 0 20px 0 !important;
       }
     }
@@ -45,7 +45,7 @@
         <div class="container-fluid">
           <div class="row ml-5 mr-5 mt-5">
             <div class="col-lg-6 pr-3 pl-5 text-left">
-              <img id="logo" class="img-fluid pb-5 pt-0 pr-5" style="background-color: transparent;"
+              <img id="logo-fve" class="img-fluid pb-5 pt-0 pr-5" style="background-color: transparent;"
                 src="{{URL::asset('/img/fve-logo.png')}}" alt="logo fve" width="500rem">
             </div>
             <div class="col-lg-6 pl-3 pr-5">

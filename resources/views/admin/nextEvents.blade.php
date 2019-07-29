@@ -31,7 +31,7 @@
                             <h1 class="text-center pt-5">Les prochains événements</h1>
                         </div>
                     </div>
-                    @if($events == '')
+                    @if(count($events)== 0)
                     <h3 class="text-center pt-5">Il n'y a pas d'événement prévu pour le moment.</h3>
                     @else
                     @foreach($events as $event)

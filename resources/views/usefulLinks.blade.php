@@ -25,9 +25,9 @@
                     <div class="row">
                         <div class="col-lg-6 d-flex ">
                             <div class="jumbotron card card-block docToDownload" style="max-width:none">
-                                <h2>
+                                <h3>
                                     e-shop de la fve
-                                </h2>
+                                </h3>
                                 <p class="text-justify">
                                     La fédération vaudoise des entrepreneurs a développé depuis peu un e-shop mettant en
                                     vente de
@@ -43,9 +43,9 @@
                         </div>
                         <div class="col-lg-6 d-flex">
                             <div class="jumbotron card card-block docToDownload" style="max-width:none">
-                                <h2>
+                                <h3>
                                     Les offres de formation continue
-                                </h2>
+                                </h3>
                                 <p class="text-justify">
                                     Vous trouverez sur le lien suivant les offres de formation continue proposées par la
                                     fédération vaudoise des entrepreneurs. Celles-ci couvrent tous les secteurs d’une
